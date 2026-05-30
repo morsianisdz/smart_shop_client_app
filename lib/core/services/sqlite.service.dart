@@ -5,7 +5,7 @@ class Sqliteservice {
   Database? database;
   final String dbName = "emarket3.db";
 
-  init() async {
+  Future<Database?>? init() async {
     if(database != null){
       return database;
     }
@@ -20,5 +20,6 @@ class Sqliteservice {
           'CREATE TABLE products (id INTEGER PRIMARY KEY, name TEXT, image TEXT, cart_id INTEGER, checked INTEGER DEFAULT 0)');
           
     });
+    return null;
   }
 }

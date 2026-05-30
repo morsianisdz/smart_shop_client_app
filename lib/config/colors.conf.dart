@@ -2,9 +2,19 @@ import 'package:flutter/material.dart';
 
 
 class ColorsConf {
-  static Color orange = Color(int.parse("FFFF6B00", radix: 16));
-  static Color title = Color(int.parse("FFF8FAF0", radix: 16));
-  static Color darkBackground = Color(int.parse("FF070A13", radix: 16));
-  static Color textGray = Color(int.parse("FF9CA3AF", radix: 16));
-  static Color textInputFillColor = Color(int.parse("FF111827", radix: 16));
+  static Color orange = Color(0xFFFF6B00);
+
+  //dark theme
+  static Color textWhite = Color(0xFFF8FAF0);
+  static Color textlightGray = Color(0xFF9CA3AF);
+  static Color darkBackground = Color(0xFF070A13);
+  static Color darkContainer = Color(0xFF111827);
+  static Color darkgrey = Color(0xFF6b7280);
+
+  //light theme
+  static Color textBlack = const Color(0xFF111827);
+  static Color textdarkGray = const Color(0xFF6B7280);
+  static Color lightBackground = const Color(0xFFF8FAFC);
+  static Color lightContainer = const Color(0xFFF3F4F6);
+  static Color lightgrey = const Color(0xFFE5E7EB);
 }

@@ -53,7 +53,12 @@ class LocaleTranslation extends Translations {
       "login_success": "Login success",
       "you_r_in_store_shopping_helper": "Your in-store shopping helper",
       "email_adress": "Email adress",
-      "http_error": "Error sending request"
+      "http_error": "Error sending request",
+      "forgot": "Forgot?",
+      "google": "Google",
+      "or_sign_in_with": "OR SIGN IN WITH",
+      "new": "New?",
+      "create_account": "Create Account"
     },
     "ar": {
       "introduction": "مقدمة",

@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:dio/dio.dart';
 import 'package:smart_shop_client_app/config/http.conf.dart';
-import 'package:smart_shop_client_app/constants/typography.dart';
+import 'package:smart_shop_client_app/constants/appText.data.dart';
 import 'package:smart_shop_client_app/core/models/http_request.model.dart';
 import 'package:get/get.dart';
 
@@ -38,7 +38,7 @@ class HttpService {
 
       return response.data;
     } on DioException catch (_) {
-      throw Typography.httpError.tr;
+      throw AppText.httpError.tr;
     } catch (e) {
       rethrow;
     }
@@ -58,7 +58,7 @@ class HttpService {
       }
       return response.data;
     } on DioException catch (_) {
-      throw Typography.httpError.tr;
+      throw AppText.httpError.tr;
     } catch (e) {
       rethrow;
     }

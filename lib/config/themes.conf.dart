@@ -3,74 +3,103 @@ import 'package:smart_shop_client_app/config/colors.conf.dart';
 import 'package:smart_shop_client_app/config/ui.conf.dart';
 
 class ThemeConf {
-  static const String fontFamily = 'Inter';
+  static const String fontFamily = 'PlusJakartaSans';
+  static const String secondaryFontFamily = 'JetBrainsMono';
 
-  static AppBarTheme appBarTheme =
-      const AppBarTheme(backgroundColor: Colors.transparent, elevation: 0);
+  static ColorScheme lightColorS = ColorScheme.light(
+    primary: ColorsConf.orange,
+    surface: ColorsConf.lightBackground,
+    onSurface: ColorsConf.textBlack,
+    primaryContainer: ColorsConf.lightContainer,
+    onPrimaryContainer: ColorsConf.textdarkGray,
+    onSecondaryContainer: ColorsConf.darkgrey,
+    brightness: Brightness.light,
+  );
+
+  static ColorScheme darkColorS = ColorScheme.dark(
+    primary: ColorsConf.orange,
+    surface: ColorsConf.darkBackground,
+    onSurface: ColorsConf.textWhite,
+    primaryContainer: ColorsConf.darkContainer,
+    onPrimaryContainer: ColorsConf.textlightGray,
+    onSecondaryContainer: ColorsConf.lightgrey,
+    brightness: Brightness.light,
+  );
+
+  static AppBarTheme appBarTheme = const AppBarTheme(
+    backgroundColor: Colors.transparent,
+    elevation: 0,
+  );
 
   static TextTheme textTheme = TextTheme(
-      titleLarge: TextStyle(
-          fontWeight: FontWeight.bold, color: ColorsConf.title, fontSize: 28),
-      titleMedium: TextStyle(
-          fontWeight: FontWeight.bold, color: ColorsConf.textGray, fontSize: 24),
-      bodyLarge: TextStyle(
-          color: ColorsConf.title, fontWeight: FontWeight.bold, fontSize: 18),
-      bodyMedium: TextStyle(
-          color: ColorsConf.textGray, fontWeight: FontWeight.bold, fontSize: 16));
+    titleLarge: TextStyle(
+      fontWeight: FontWeight.bold,
+      color: ColorsConf.textWhite,
+      fontSize: 28,
+    ),
+    titleMedium: TextStyle(fontSize: 16),
+    titleSmall: TextStyle(fontSize: 11),
+    bodyLarge: TextStyle(
+      color: ColorsConf.textWhite,
+      fontWeight: FontWeight.bold,
+      fontSize: 18,
+    ),
+    bodyMedium: TextStyle(fontSize: 9),
+  );
 
   static InputDecorationTheme inputDecorationTheme = InputDecorationTheme(
-      contentPadding: const EdgeInsets.all(UiConf.inputFieldContentPadding),
-      hintStyle: const TextStyle(
-          fontWeight: FontWeight.normal, fontSize: UiConf.inputHintTextFontSize));
+    filled: true,
+    border: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(UiConf.inputCornerRadius),
+      borderSide: BorderSide.none,
+    ),
+  );
 
   static ElevatedButtonThemeData elevatedButtonThemeData =
       ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            fixedSize: const Size.fromHeight(UiConf.buttonHeight),
-              elevation: 0, backgroundColor: ColorsConf.orange, shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(UiConf.buttonBorderRadius), // Adjust the radius as needed
-    ),));
-
-  static DialogThemeData dialogTheme = const DialogThemeData(
-    shape: RoundedRectangleBorder(),
-    alignment: Alignment.center,
-    insetPadding: EdgeInsets.all(20),
-    
-  );
-
-  static DropdownMenuThemeData dropdownMenuThemeData = const DropdownMenuThemeData(
-    inputDecorationTheme: InputDecorationTheme(
-      outlineBorder: BorderSide.none,
-      enabledBorder: InputBorder.none,
-      focusedBorder: InputBorder.none,
-    )
-  );
+        style: ElevatedButton.styleFrom(
+          backgroundColor: ColorsConf.orange,
+          minimumSize: Size.fromHeight(UiConf.elevatedButtonHeight),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(
+              UiConf.elevatedButtonBorderRadius,
+            ),
+          ),
+        ),
+      );
 
   static IconThemeData iconThemeData = IconThemeData(color: ColorsConf.orange);
 
-  static BottomSheetThemeData bottomSheetThemeData = const BottomSheetThemeData(elevation: 0, backgroundColor: Colors.transparent);
+  static BottomSheetThemeData bottomSheetThemeData = const BottomSheetThemeData(
+    elevation: 0,
+    backgroundColor: Colors.transparent,
+  );
+
+  static IconThemeData primaryIconTheme = IconThemeData(size: UiConf.iconWith);
 
   static ThemeData light = ThemeData(
-    primaryColor: ColorsConf.orange,
+    fontFamily: fontFamily,
+    colorScheme: lightColorS,
     iconTheme: iconThemeData,
     textTheme: textTheme,
     brightness: Brightness.light,
     inputDecorationTheme: inputDecorationTheme,
     appBarTheme: appBarTheme,
     elevatedButtonTheme: elevatedButtonThemeData,
-    dialogTheme: dialogTheme,
-    dropdownMenuTheme: dropdownMenuThemeData,
-    bottomSheetTheme: bottomSheetThemeData
+    bottomSheetTheme: bottomSheetThemeData,
+    primaryIconTheme: primaryIconTheme,
   );
 
   static ThemeData dark = ThemeData(
-    primaryColor: ColorsConf.orange,
+    fontFamily: fontFamily,
+    colorScheme: darkColorS,
+    iconTheme: iconThemeData,
     textTheme: textTheme,
+    brightness: Brightness.light,
     inputDecorationTheme: inputDecorationTheme,
-    brightness: Brightness.dark,
     appBarTheme: appBarTheme,
     elevatedButtonTheme: elevatedButtonThemeData,
-    dialogTheme: dialogTheme,
-    dropdownMenuTheme: dropdownMenuThemeData
+    bottomSheetTheme: bottomSheetThemeData,
+    primaryIconTheme: primaryIconTheme,
   );
 }

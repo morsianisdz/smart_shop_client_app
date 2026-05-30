@@ -8,7 +8,7 @@ class SettingsProvider {
   static Locale defaultLanguage = Locale("en");
   LanguageModel? language;
 
-  changeAppLanguage(LanguageModel language) async {
+  Future<void> changeAppLanguage(LanguageModel language) async {
     Get.updateLocale(language.content);
     await GetIt.instance<LocalStorageService>().shpSaveString('language', language.content);
     Get.back();

@@ -1,4 +1,4 @@
-class Typography {
+class AppText {
   static const String go = "go";
 
   //auth
@@ -137,4 +137,11 @@ class Typography {
   static const String yourInStoreShoppingHelper = "you_r_in_store_shopping_helper";
 
   static const String httpError = "http_error";
+  static const String forgot = "forgot";
+  static const String appTitle = "SmartShop";
+  static const String login = "login";
+  static const String google = "google";
+  static const String orSignInWith = "or_sign_in_with";
+  static const String news = "new";
+  static const String createAccount = "create_account";
 }
