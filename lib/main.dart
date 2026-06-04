@@ -1,4 +1,4 @@
-import 'package:smart_shop_client_app/constants/appText.data.dart';
+import 'package:smart_shop_client_app/constants/app_text.data.dart';
 import 'package:smart_shop_client_app/constants/translation.data.dart';
 import 'package:smart_shop_client_app/core/services/localStorage.service.dart';
 import 'package:smart_shop_client_app/core/services/sqlite.service.dart';
@@ -10,7 +10,8 @@ import 'package:get_it/get_it.dart';
 import 'package:provider/provider.dart';
 import 'package:smart_shop_client_app/core/providers/Theme.provider.dart';
 import 'package:sizer/sizer.dart';
-import 'package:smart_shop_client_app/features/auth/login/screens/login.screen.dart';
+import 'package:smart_shop_client_app/features/home/screens/home.screen.dart';
+import 'package:smart_shop_client_app/shared/providers/market.provider.dart';
 
 final getIt = GetIt.instance;
 
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
           translations: LocaleTranslation(),
           locale: SettingsProvider.defaultLanguage,
           theme: GetIt.instance<ThemeProvider>().themeData,
-          home: const LoginScreen(),
+          home: const Home(),
         ),
       ),
     );
@@ -47,6 +48,7 @@ void setupLocator() {
   getIt.registerLazySingleton<ThemeProvider>(() => ThemeProvider());
   getIt.registerLazySingleton<LocalStorageService>(() => LocalStorageService());
   getIt.registerLazySingleton<Sqliteservice>(() => Sqliteservice());
+  getIt.registerLazySingleton<MarketProvider>(() => MarketProvider());
 }
 
 

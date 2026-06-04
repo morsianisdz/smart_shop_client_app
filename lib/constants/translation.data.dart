@@ -20,7 +20,7 @@ class LocaleTranslation extends Translations {
       "app_description":
           "Use Suppcode to easy shop into this market and manage your money, now you are sur what you are buying!",
       "go": "go",
-      "welcome": "Welcome !",
+      "welcome": "Welcome back",
       "welcomto": "Welcome to %s market !",
       "u_r_not_connected": "You are not connected to supermarket wifi",
       "close": "Close",
@@ -44,7 +44,7 @@ class LocaleTranslation extends Translations {
       "link_app_to_market_to_get_enjoy":
           "Link app to market and enjoy shopping !",
       "scan_product": "Scan product",
-      "points": "pt",
+      "points": "Points",
       "earned": "Earned",
       "see_rewards": "See rewards",
       "favorit_cart": "Favorit cart",
@@ -58,7 +58,17 @@ class LocaleTranslation extends Translations {
       "google": "Google",
       "or_sign_in_with": "OR SIGN IN WITH",
       "new": "New?",
-      "create_account": "Create Account"
+      "create_account": "Create Account",
+      "hello": "Hello, %s!",
+      "member_status": "Member Status",
+      "bronze_tier": "Bronze Tier",
+      "xpts": "%s pts",
+      "new_reward_x": "New reward: %s pts",
+      "xused": "%s% used",
+      "amount_limit": "/%s Limit",
+      "x_remaining": "Remaining: %s",
+      "adjust_limit": "Adjust limit",
+      "active_shopping_limit": "Active Shopping Limit"
     },
     "ar": {
       "introduction": "مقدمة",

@@ -8,6 +8,7 @@ class ThemeConf {
 
   static ColorScheme lightColorS = ColorScheme.light(
     primary: ColorsConf.orange,
+    secondary: ColorsConf.blue,
     surface: ColorsConf.lightBackground,
     onSurface: ColorsConf.textBlack,
     primaryContainer: ColorsConf.lightContainer,
@@ -18,12 +19,13 @@ class ThemeConf {
 
   static ColorScheme darkColorS = ColorScheme.dark(
     primary: ColorsConf.orange,
+    secondary: ColorsConf.blue,
     surface: ColorsConf.darkBackground,
     onSurface: ColorsConf.textWhite,
     primaryContainer: ColorsConf.darkContainer,
     onPrimaryContainer: ColorsConf.textlightGray,
     onSecondaryContainer: ColorsConf.lightgrey,
-    brightness: Brightness.light,
+    brightness: Brightness.dark,
   );
 
   static AppBarTheme appBarTheme = const AppBarTheme(
@@ -31,28 +33,42 @@ class ThemeConf {
     elevation: 0,
   );
 
-  static TextTheme textTheme = TextTheme(
+  static TextTheme _buldTextTheme(ColorScheme colorScheme) => TextTheme(
     titleLarge: TextStyle(
       fontWeight: FontWeight.bold,
-      color: ColorsConf.textWhite,
-      fontSize: 28,
+      fontSize: UiConf.titleLargeFontSize,
+      color: colorScheme.onSurface,
     ),
-    titleMedium: TextStyle(fontSize: 16),
-    titleSmall: TextStyle(fontSize: 11),
+    titleMedium: TextStyle(
+      fontSize: UiConf.titleMediumFontSize,
+      color: colorScheme.onPrimaryContainer,
+    ),
+    titleSmall: TextStyle(
+      fontSize: UiConf.titleSmallFontSize,
+      color: colorScheme.onPrimaryContainer,
+    ),
     bodyLarge: TextStyle(
-      color: ColorsConf.textWhite,
       fontWeight: FontWeight.bold,
-      fontSize: 18,
+      fontSize: UiConf.bodyLargeFontSize,
+      color: colorScheme.onPrimaryContainer,
     ),
-    bodyMedium: TextStyle(fontSize: 9),
+    bodyMedium: TextStyle(
+      fontSize: UiConf.bodyMediumFontSize,
+      color: colorScheme.onPrimaryContainer,
+    ),
+    bodySmall: TextStyle(
+      fontSize: UiConf.bodySmallFontSize,
+      color: colorScheme.onPrimaryContainer,
+    ),
   );
 
-  static InputDecorationTheme inputDecorationTheme = InputDecorationTheme(
+  static InputDecorationTheme _buildInputDecorationTheme(ColorScheme colorScheme) => InputDecorationTheme(
     filled: true,
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(UiConf.inputCornerRadius),
       borderSide: BorderSide.none,
     ),
+    fillColor: colorScheme.primaryContainer,
   );
 
   static ElevatedButtonThemeData elevatedButtonThemeData =
@@ -77,29 +93,45 @@ class ThemeConf {
 
   static IconThemeData primaryIconTheme = IconThemeData(size: UiConf.iconWith);
 
-  static ThemeData light = ThemeData(
+  static BadgeThemeData badgeThemeData = BadgeThemeData(
+    backgroundColor: Colors.red,
+  );
+
+  static CardThemeData _buildCardTheme(ColorScheme colorScheme) =>
+      CardThemeData(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(UiConf.cardBorderRadius),
+          side: BorderSide(width: UiConf.cardBorderSideWith),
+        ),
+        color: colorScheme.primaryContainer,
+        elevation: UiConf.cardElevation,
+      );
+
+  static ThemeData get light => ThemeData(
     fontFamily: fontFamily,
     colorScheme: lightColorS,
     iconTheme: iconThemeData,
-    textTheme: textTheme,
-    brightness: Brightness.light,
-    inputDecorationTheme: inputDecorationTheme,
+    textTheme: _buldTextTheme(lightColorS),
+    inputDecorationTheme: _buildInputDecorationTheme(lightColorS),
     appBarTheme: appBarTheme,
     elevatedButtonTheme: elevatedButtonThemeData,
     bottomSheetTheme: bottomSheetThemeData,
     primaryIconTheme: primaryIconTheme,
+    badgeTheme: badgeThemeData,
+    cardTheme: _buildCardTheme(lightColorS),
   );
 
-  static ThemeData dark = ThemeData(
+  static ThemeData get dark => ThemeData(
     fontFamily: fontFamily,
     colorScheme: darkColorS,
     iconTheme: iconThemeData,
-    textTheme: textTheme,
-    brightness: Brightness.light,
-    inputDecorationTheme: inputDecorationTheme,
+    textTheme: _buldTextTheme(darkColorS),
+    inputDecorationTheme: _buildInputDecorationTheme(darkColorS),
     appBarTheme: appBarTheme,
     elevatedButtonTheme: elevatedButtonThemeData,
     bottomSheetTheme: bottomSheetThemeData,
     primaryIconTheme: primaryIconTheme,
+    badgeTheme: badgeThemeData,
+    cardTheme: _buildCardTheme(darkColorS),
   );
 }

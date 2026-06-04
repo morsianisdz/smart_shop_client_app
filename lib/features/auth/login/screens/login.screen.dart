@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:smart_shop_client_app/config/colors.conf.dart';
 import 'package:smart_shop_client_app/config/themes.conf.dart';
-import 'package:smart_shop_client_app/constants/appText.data.dart';
+import 'package:smart_shop_client_app/constants/app_text.data.dart';
 import 'package:smart_shop_client_app/core/helpers/colors.helper.dart';
 import 'package:smart_shop_client_app/core/helpers/text_style.helper.dart';
 import 'package:smart_shop_client_app/core/widgets/base_view.component.dart';
@@ -21,13 +21,10 @@ class LoginScreen extends StatelessWidget {
     Color iconsColor = colorScheme(context).onPrimaryContainer;
 
     return BaseView(
-      backgroundColor: colorScheme(context).surface,
-      extended: true,
-      transparent: true,
       body:
           [
                 LogoWidget().centered().paddingSymmetric(vertical: 48),
-                titleSmall(
+                cTitleSmall(
                   context,
                   AppText.email.tr.toUpperCase(),
                   fontFamily: ThemeConf.secondaryFontFamily,
@@ -36,12 +33,12 @@ class LoginScreen extends StatelessWidget {
                   icon: Icon(Icons.email, color: iconsColor),
                 ).paddingOnly(bottom: 20),
                 [
-                      titleSmall(
+                      cTitleSmall(
                         context,
                         AppText.password.tr.toUpperCase(),
                         fontFamily: ThemeConf.secondaryFontFamily,
                       ),
-                      titleSmall(
+                      cTitleSmall(
                         context,
                         AppText.forgot.tr,
                         fontFamily: ThemeConf.secondaryFontFamily,
@@ -57,7 +54,7 @@ class LoginScreen extends StatelessWidget {
                 ).paddingOnly(bottom: 32),
                 CButton.textOnly(
                   () {},
-                  titleMedium(
+                  cTitleMedium(
                     context,
                     AppText.login.tr.toUpperCase(),
                     color: ColorsConf.textWhite,
@@ -69,7 +66,7 @@ class LoginScreen extends StatelessWidget {
                 [
                   CButton.withIcon(
                     () {},
-                    titleMedium(
+                    cTitleMedium(
                       context,
                       AppText.google.tr,
                       color: colorScheme(context).onSurface,
@@ -80,7 +77,7 @@ class LoginScreen extends StatelessWidget {
                   const SizedBox(width: 18),
                   CButton.withIcon(
                     () {},
-                    titleMedium(
+                    cTitleMedium(
                       context,
                       AppText.google.tr,
                       color: colorScheme(context).onSurface,
@@ -93,11 +90,11 @@ class LoginScreen extends StatelessWidget {
                   ).flexible(),
                 ].row().paddingOnly(bottom: 28),
                 [
-                      titleSmall(
+                      cTitleSmall(
                         context,
                         AppText.news.tr,
                       ).paddingOnly(right: 4),
-                      titleSmall(
+                      cTitleSmall(
                         context,
                         AppText.createAccount.tr,
                         color: colorScheme(context).primary,

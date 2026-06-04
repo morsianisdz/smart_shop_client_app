@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 class ColorsConf {
   static Color orange = Color(0xFFFF6B00);
+  static Color blue = Color(0xFF38BDF8);
 
   //dark theme
   static Color textWhite = Color(0xFFF8FAF0);
@@ -17,4 +18,6 @@ class ColorsConf {
   static Color lightBackground = const Color(0xFFF8FAFC);
   static Color lightContainer = const Color(0xFFF3F4F6);
   static Color lightgrey = const Color(0xFFE5E7EB);
+
+
 }

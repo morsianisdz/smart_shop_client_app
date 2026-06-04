@@ -144,4 +144,15 @@ class AppText {
   static const String orSignInWith = "or_sign_in_with";
   static const String news = "new";
   static const String createAccount = "create_account";
+  static const String hello = "hello";
+  static const String memberStatus = "member_status";
+  static const String bronzeTier = "bronze_tier";
+  static const String xpoints = "points";
+  static const String xpts = "xpts";
+  static const String newRewardx = "new_reward_x";
+  static const String xused = "xused";
+  static const String amountLimit = "amount_limit";
+  static const String xRemaining = "x_remaining";
+  static const String adjustLimit = "adjust_limit";
+  static const String activeShoppingLimit = "active_shopping_limit";
 }

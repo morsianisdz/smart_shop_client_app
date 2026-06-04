@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:dio/dio.dart';
 import 'package:smart_shop_client_app/config/http.conf.dart';
-import 'package:smart_shop_client_app/constants/appText.data.dart';
+import 'package:smart_shop_client_app/constants/app_text.data.dart';
 import 'package:smart_shop_client_app/core/models/http_request.model.dart';
 import 'package:get/get.dart';
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:smart_shop_client_app/core/helpers/colors.helper.dart';
 
 class BaseView extends StatelessWidget {
   const BaseView(
@@ -9,11 +10,11 @@ class BaseView extends StatelessWidget {
       this.appBarEnd,
       required this.body,
       this.top = const [],
-      this.transparent = false,
-      this.extended = false,
+      this.transparent = true,
+      this.extended = true,
       this.drawer,
       this.appBarTitle,
-      this.backgroundColor = Colors.white,
+      this.backgroundColor,
       this.bottom});
 
   final GlobalKey<ScaffoldState>? gkey;
@@ -25,7 +26,7 @@ class BaseView extends StatelessWidget {
   final Widget? drawer;
   final bool transparent;
   final bool extended;
-  final Color backgroundColor;
+  final Color? backgroundColor;
   final Widget? bottom;
 
   @override
@@ -42,7 +43,7 @@ class BaseView extends StatelessWidget {
             actions: appBarEnd,
           ).paddingSymmetric(horizontal: 25, vertical: 18)),
       extendBodyBehindAppBar: extended,
-      backgroundColor: backgroundColor,
+      backgroundColor: backgroundColor ?? colorScheme(context).surface,
       body: body,
       bottomSheet: bottom,
     );
