@@ -3,6 +3,7 @@ import 'package:smart_shop_client_app/config/colors.conf.dart';
 import 'package:smart_shop_client_app/config/ui.conf.dart';
 
 class ThemeConf {
+
   static const String fontFamily = 'PlusJakartaSans';
   static const String secondaryFontFamily = 'JetBrainsMono';
 
@@ -68,6 +69,7 @@ class ThemeConf {
       borderRadius: BorderRadius.circular(UiConf.inputCornerRadius),
       borderSide: BorderSide.none,
     ),
+    hintStyle: TextStyle(color: colorScheme.onSecondaryContainer, fontSize: UiConf.hintFontSize),
     fillColor: colorScheme.primaryContainer,
   );
 
@@ -101,7 +103,7 @@ class ThemeConf {
       CardThemeData(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(UiConf.cardBorderRadius),
-          side: BorderSide(width: UiConf.cardBorderSideWith),
+          side: BorderSide.none,
         ),
         color: colorScheme.primaryContainer,
         elevation: UiConf.cardElevation,
@@ -134,4 +136,6 @@ class ThemeConf {
     badgeTheme: badgeThemeData,
     cardTheme: _buildCardTheme(darkColorS),
   );
+
+    static ThemeData currentTheme = dark;
 }

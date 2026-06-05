@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:smart_shop_client_app/config/themes.conf.dart';
 
 class ThemeProvider extends ChangeNotifier {
-  ThemeData themeData = ThemeConf.dark;
+  ThemeData themeData = ThemeConf.currentTheme;
 
   void toggleTheme() {
     themeData =

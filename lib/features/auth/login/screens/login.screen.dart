@@ -30,7 +30,8 @@ class LoginScreen extends StatelessWidget {
                   fontFamily: ThemeConf.secondaryFontFamily,
                 ).paddingOnly(bottom: 8),
                 CInputField(
-                  icon: Icon(Icons.email, color: iconsColor),
+                  controller: TextEditingController(),
+                  prefixIcon: Icon(Icons.email, color: iconsColor),
                 ).paddingOnly(bottom: 20),
                 [
                       cTitleSmall(
@@ -49,8 +50,9 @@ class LoginScreen extends StatelessWidget {
                     .row(alignment: MainAxisAlignment.spaceBetween)
                     .paddingOnly(bottom: 8),
                 CInputField(
-                  icon: Icon(Icons.lock, color: iconsColor),
-                  obscureText: true,
+                  controller: TextEditingController(),
+                  prefixIcon: Icon(Icons.lock, color: iconsColor),
+                  obscure: true,
                 ).paddingOnly(bottom: 32),
                 CButton.textOnly(
                   () {},

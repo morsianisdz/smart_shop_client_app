@@ -68,7 +68,11 @@ class LocaleTranslation extends Translations {
       "amount_limit": "/%s Limit",
       "x_remaining": "Remaining: %s",
       "adjust_limit": "Adjust limit",
-      "active_shopping_limit": "Active Shopping Limit"
+      "active_shopping_limit": "Active Shopping Limit",
+      "Search_products_brands_aisles": "Search products, brands, aisles...",
+      "start_in_store_scanning": "Start In Store Scanning",
+      "my_saved_offers": "My Saved offers",
+      "see_all": "See All"
     },
     "ar": {
       "introduction": "مقدمة",

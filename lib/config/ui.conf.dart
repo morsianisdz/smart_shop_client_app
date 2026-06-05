@@ -1,7 +1,8 @@
 class UiConf {
   //input text
   static const double inputHintTextFontSize = 14;
-  static const double inputCornerRadius = 12;
+  static const double inputCornerRadius = 16;
+  static const double hintFontSize = 14;
 
   //button
   static const double buttonHeight = 40;
@@ -18,19 +19,20 @@ class UiConf {
   static double? userAvatarRadius = 24;
 
   //fonts size
-  static double titleMediumFontSize = 16;
+   static double titleLargeFontSize = 24;
+  static double titleMediumFontSize = 14;
   static double titleSmallFontSize = 11;
-  static double titleLargeFontSize = 28;
+ 
   static double bodyLargeFontSize = 18;
-  static double bodyMediumFontSize = 9;
-  static double bodySmallFontSize = 6;
+  static double bodyMediumFontSize = 11;
+  static double bodySmallFontSize = 8;
 
   //card
   static double cardBorderRadius = 16;
-  static double cardBorderSideWith = 0.3;
+  static double cardBorderSideWith = 0;
   static double? cardElevation = 0;
 
   //tag
-  static double tagBorderRadius = 8;
+  static double tagBorderRadius = 6;
   static double tagBorderWidth = 0.5;
 }

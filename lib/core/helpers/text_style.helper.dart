@@ -62,16 +62,13 @@ Widget cBodyMedium(
   double? fontSize,
   FontWeight? fontWeight,
   String? fontFamily,
-}) => text.text
-    .textStyle(
-      Theme.of(context).textTheme.bodyMedium!.copyWith(
+}) => Text(text, style: Theme.of(context).textTheme.bodyMedium!.copyWith(
         color: color,
         fontSize: fontSize,
         fontWeight: fontWeight,
         fontFamily: fontFamily,
       ),
-    )
-    .make();
+    );
 
 Widget cBodySmall(
   BuildContext context,
@@ -80,13 +77,10 @@ Widget cBodySmall(
   double? fontSize,
   FontWeight? fontWeight,
   String? fontFamily,
-}) => text.text
-    .textStyle(
-      Theme.of(context).textTheme.bodySmall!.copyWith(
+}) => Text(text, style: Theme.of(context).textTheme.bodySmall!.copyWith(
         color: color,
         fontSize: fontSize,
         fontWeight: fontWeight,
         fontFamily: fontFamily,
       ),
-    )
-    .make();
+    );

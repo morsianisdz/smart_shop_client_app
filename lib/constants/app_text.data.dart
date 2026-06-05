@@ -155,4 +155,8 @@ class AppText {
   static const String xRemaining = "x_remaining";
   static const String adjustLimit = "adjust_limit";
   static const String activeShoppingLimit = "active_shopping_limit";
+  static const String searchProductsBrandsAisles = "Search_products_brands_aisles";
+  static const String startInStoreScanning = "start_in_store_scanning";
+  static const String mySavedOffers = "my_saved_offers";
+  static const String seeAll = "see_all";
 }
