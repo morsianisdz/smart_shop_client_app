@@ -35,4 +35,14 @@ class UiConf {
   //tag
   static double tagBorderRadius = 6;
   static double tagBorderWidth = 0.5;
+
+  //bottom navigation bar
+  static const double navBarMargin = 16.0;
+  static const double navBarCornerRadius = 16;
+  static const double navBarHorizontalPadding = 8.0;
+  static const double navBarIconSize = 18.0;
+  static const double navBarLabelSpacing = 4.0;
+  static const double navBarItemCornerRadius = 16.0;
+  static const double navBarItemHorizontalPadding = 12.0;
+  static const double navBarItemVerticalPadding = 12.0;
 }

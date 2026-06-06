@@ -45,7 +45,7 @@ class BaseView extends StatelessWidget {
       extendBodyBehindAppBar: extended,
       backgroundColor: backgroundColor ?? colorScheme(context).surface,
       body: body,
-      bottomSheet: bottom,
+      bottomNavigationBar: bottom,
     );
   }
 }

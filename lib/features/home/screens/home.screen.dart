@@ -145,7 +145,7 @@ class Home extends StatelessWidget {
               ).onTap(() {}),
             ]
             .row(alignment: MainAxisAlignment.spaceBetween)
-            .paddingOnly(bottom: 24),
+            .paddingOnly(bottom: 12),
             ProductWrapLayout(products: FakeData.products)
       ].column().paddingSymmetric(horizontal: 16),
     );

@@ -23,11 +23,16 @@ class ProductCard extends StatelessWidget {
             width: 50,
             height: 50,
           ).paddingSymmetric(vertical: 8),
-          cTitleSmall(
-            context,
-            product.name,
-            color: colorScheme(context).onSurface,
-          ).paddingOnly(bottom: 4),
+          product.name.text
+              .textStyle(
+                Theme.of(context).textTheme.titleMedium!.copyWith(
+                  color: colorScheme(context).onSurface,
+                ),
+              ).overflow(TextOverflow.ellipsis)
+              .softWrap(false)
+              .make()
+              .w(double.infinity)
+              .paddingOnly(bottom: 4),
           [
             cTitleSmall(
               context,
@@ -35,28 +40,24 @@ class ProductCard extends StatelessWidget {
               color: colorScheme(context).primary,
             ),
             if (product.oldPrice != null) ...[
-              const SizedBox(width: 8),
-              cBodyMedium(
-                context,
-                priceBuilder(product.oldPrice.toString()),
-                color: colorScheme(context).primary,
-              ),
-              product.oldPrice
-                  .toString()
-                  .text
+              priceBuilder(product.oldPrice.toString()).text
                   .textStyle(
                     TextStyle(
                       decoration: TextDecoration.lineThrough,
                       color: colorScheme(context).onPrimaryContainer,
                     ),
                   )
-                  .make(),
+                  .make()
+                  .paddingOnly(left: 8),
             ],
           ].row(),
-        ].column(),
+        ].column().paddingOnly(top: 8),
         if (product.tag != null)
-        CTag(text: product.tag!, color: colorScheme(context).primary).positioned(right: 0)
-      ].stack().p(16),
+          CTag(
+            text: product.tag!,
+            color: colorScheme(context).primary,
+          ).positioned(right: -6, top: -6),
+      ].stack(clip: Clip.none).p(16),
     );
   }
 }

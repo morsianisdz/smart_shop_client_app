@@ -72,7 +72,9 @@ class LocaleTranslation extends Translations {
       "Search_products_brands_aisles": "Search products, brands, aisles...",
       "start_in_store_scanning": "Start In Store Scanning",
       "my_saved_offers": "My Saved offers",
-      "see_all": "See All"
+      "see_all": "See All",
+      "scan": "Scan",
+      "aisle_x_y": "Aisle %s, %s"
     },
     "ar": {
       "introduction": "مقدمة",

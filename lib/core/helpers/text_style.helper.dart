@@ -52,7 +52,7 @@ Widget cTitleSmall(
         fontWeight: fontWeight,
         fontFamily: fontFamily,
       ),
-    )
+    ).align(TextAlign.left)
     .make();
 
 Widget cBodyMedium(

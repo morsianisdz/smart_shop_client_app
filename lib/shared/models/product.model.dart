@@ -9,7 +9,8 @@ class Product {
     this.oldPrice,
     this.qty = 1,
     this.checked = false,
-    this.tag
+    this.tag,
+    this.barcode
   });
 
   final int id;
@@ -20,6 +21,7 @@ class Product {
   final CImage? image;
   bool? checked;
   String? tag;
+  String? barcode;
 
   factory Product.fromJson(dynamic json) {
     return Product(

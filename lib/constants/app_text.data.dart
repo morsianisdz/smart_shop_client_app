@@ -159,4 +159,6 @@ class AppText {
   static const String startInStoreScanning = "start_in_store_scanning";
   static const String mySavedOffers = "my_saved_offers";
   static const String seeAll = "see_all";
+  static const String scan = "scan";
+  static const String aisleXY = "aisle_x_y";
 }
