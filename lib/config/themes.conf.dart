@@ -10,6 +10,7 @@ class ThemeConf {
   static ColorScheme lightColorS = ColorScheme.light(
     primary: ColorsConf.orange,
     secondary: ColorsConf.blue,
+    tertiary: ColorsConf.green,
     surface: ColorsConf.lightBackground,
     onSurface: ColorsConf.textBlack,
     primaryContainer: ColorsConf.lightContainer,
@@ -21,6 +22,7 @@ class ThemeConf {
   static ColorScheme darkColorS = ColorScheme.dark(
     primary: ColorsConf.orange,
     secondary: ColorsConf.blue,
+    tertiary: ColorsConf.green,
     surface: ColorsConf.darkBackground,
     onSurface: ColorsConf.textWhite,
     primaryContainer: ColorsConf.darkContainer,
@@ -109,6 +111,12 @@ class ThemeConf {
         elevation: UiConf.cardElevation,
       );
 
+  static IconButtonThemeData iconButtonThemeBuilder(ColorScheme colorScheme) =>
+      IconButtonThemeData(
+        style: IconButton.styleFrom(backgroundColor: colorScheme.onSurface.withValues(alpha: 0.1)),
+      );
+    
+
   static ThemeData get light => ThemeData(
     fontFamily: fontFamily,
     colorScheme: lightColorS,
@@ -121,6 +129,7 @@ class ThemeConf {
     primaryIconTheme: primaryIconTheme,
     badgeTheme: badgeThemeData,
     cardTheme: _buildCardTheme(lightColorS),
+    iconButtonTheme: iconButtonThemeBuilder(lightColorS)
   );
 
   static ThemeData get dark => ThemeData(
@@ -135,6 +144,7 @@ class ThemeConf {
     primaryIconTheme: primaryIconTheme,
     badgeTheme: badgeThemeData,
     cardTheme: _buildCardTheme(darkColorS),
+    iconButtonTheme: iconButtonThemeBuilder(darkColorS)
   );
 
     static ThemeData currentTheme = dark;

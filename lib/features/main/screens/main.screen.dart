@@ -9,12 +9,14 @@ class Main extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BaseView(body: IndexedStack(
+    return BaseView(
+      body: IndexedStack(
         index: GetIt.instance<MainProvider>().currentIndex,
-        children: GetIt.instance<MainProvider>().pages.map((page) => page.widget).toList(),
+        children: GetIt.instance<MainProvider>().pages
+            .map((page) => page.widget)
+            .toList(),
       ),
-      bottom: CustomNavBar(
-      ),
-      );
+      bottom: CustomNavBar(),
+    );
   }
 }

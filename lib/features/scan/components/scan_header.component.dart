@@ -34,6 +34,6 @@ class ScanHeader extends StatelessWidget {
         icon: FontAwesomeIcons.keyboard,
         isActive: false,
       ).paddingOnly(right: 12),
-    ].row().paddingSymmetric(horizontal: 16, vertical: 8);
+    ].row().paddingSymmetric(horizontal: 16, vertical: 8).h(60);
   }
 }

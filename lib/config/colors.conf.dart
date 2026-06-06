@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class ColorsConf {
   static Color orange = Color(0xFFFF6B00);
   static Color blue = Color(0xFF38BDF8);
+  static Color green = Color(0xFF4ADe80);
 
   //dark theme
   static Color textWhite = Color(0xFFF8FAF0);

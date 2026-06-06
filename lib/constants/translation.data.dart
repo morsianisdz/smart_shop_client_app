@@ -74,7 +74,14 @@ class LocaleTranslation extends Translations {
       "my_saved_offers": "My Saved offers",
       "see_all": "See All",
       "scan": "Scan",
-      "aisle_x_y": "Aisle %s, %s"
+      "aisle_x_y": "Aisle %s, %s",
+      "align_barcode": "Align Barcode",
+      "ean_barecode": "EAN: %s",
+      "in_aisle_x": "In Aisle %s",
+      "add_quantity": "Add Quantity",
+      "expected_sub_total": "Expected Sub Total",
+      "cancel": "Cancel",
+      "add_to_cart": "Add To Cart"
     },
     "ar": {
       "introduction": "مقدمة",

@@ -13,7 +13,6 @@ class CTag extends StatelessWidget {
   Widget build(BuildContext context) => Container(
     decoration: BoxDecoration(
       color: color.withValues(alpha: 0.1),
-      border: Border.all(color: color, width: UiConf.tagBorderWidth),
       borderRadius: BorderRadius.circular(UiConf.tagBorderRadius),
     ),
     child: cBodySmall(

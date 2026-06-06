@@ -19,10 +19,9 @@ class UiConf {
   static double? userAvatarRadius = 24;
 
   //fonts size
-   static double titleLargeFontSize = 24;
-  static double titleMediumFontSize = 14;
+  static double titleLargeFontSize = 22;
+  static double titleMediumFontSize = 12;
   static double titleSmallFontSize = 11;
- 
   static double bodyLargeFontSize = 18;
   static double bodyMediumFontSize = 11;
   static double bodySmallFontSize = 8;
@@ -33,8 +32,8 @@ class UiConf {
   static double? cardElevation = 0;
 
   //tag
-  static double tagBorderRadius = 6;
-  static double tagBorderWidth = 0.5;
+  static double tagBorderRadius = 0;
+  static double tagBorderWidth = 0;
 
   //bottom navigation bar
   static const double navBarMargin = 16.0;

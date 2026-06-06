@@ -161,4 +161,10 @@ class AppText {
   static const String seeAll = "see_all";
   static const String scan = "scan";
   static const String aisleXY = "aisle_x_y";
+  static const String alignBarcode = "align_barcode";
+  static const String eanBarecode = "ean_barecode";
+  static const String inAisleX = "in_aisle_x";
+  static const String addQuantity = "add_quantity";
+  static const String expectedSubTotal = "expected_sub_total";
+  static const String cancel = "cancel";
 }

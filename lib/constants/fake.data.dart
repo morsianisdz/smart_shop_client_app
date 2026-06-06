@@ -9,6 +9,7 @@ class FakeData {
       name: "Sila Olive oil 500ml",
       price: 250,
       tag: "10% off",
+      barcode: "613254117475",
       image: CImage(
         url:
             "https://static.vecteezy.com/system/resources/thumbnails/059/028/147/small_2x/olive-oil-bottle-product-liquid-food-cooking-ingredient-isolated-on-transparent-background-png.png",
@@ -20,7 +21,8 @@ class FakeData {
       name: "Special Milk 1L",
       price: 130,
       oldPrice: 200,
-      tag: "BOGO",
+      barcode: "613254117475",
+      tag: "ORGANIC, GLUTEN-FREE",
       image: CImage(
         url:
             "https://static.vecteezy.com/system/resources/previews/035/410/276/non_2x/groceries-theme-3d-milk-product-almond-milk-bottle-on-a-transparent-background-3d-rendering-free-png.png",
