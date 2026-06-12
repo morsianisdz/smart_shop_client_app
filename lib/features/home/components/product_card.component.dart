@@ -19,7 +19,7 @@ class ProductCard extends StatelessWidget {
       child: [
         [
           ImageBuilderHelper.coverUrl(
-            product.image!.url!,
+            product.image!.url,
             width: 50,
             height: 50,
           ).paddingSymmetric(vertical: 8),

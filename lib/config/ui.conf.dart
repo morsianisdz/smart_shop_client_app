@@ -20,10 +20,10 @@ class UiConf {
 
   //fonts size
   static double titleLargeFontSize = 22;
-  static double titleMediumFontSize = 12;
-  static double titleSmallFontSize = 11;
+  static double titleMediumFontSize = 18;
+  static double titleSmallFontSize = 14;
   static double bodyLargeFontSize = 18;
-  static double bodyMediumFontSize = 11;
+  static double bodyMediumFontSize = 12;
   static double bodySmallFontSize = 8;
 
   //card
@@ -32,7 +32,7 @@ class UiConf {
   static double? cardElevation = 0;
 
   //tag
-  static double tagBorderRadius = 0;
+  static double tagBorderRadius = 5;
   static double tagBorderWidth = 0;
 
   //bottom navigation bar

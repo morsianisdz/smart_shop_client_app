@@ -48,9 +48,8 @@ class CustomNavBar extends StatelessWidget {
             page.icon,
             size: UiConf.navBarIconSize,
             color: isSelected ? Colors.orange : Colors.grey,
-          ),
-          const SizedBox(height: UiConf.navBarLabelSpacing),
-          cTitleSmall(
+          ).paddingOnly(bottom: UiConf.navBarLabelSpacing),
+          cBodySmall(
             context,
             page.title.tr.toUpperCase(),
             color: isSelected

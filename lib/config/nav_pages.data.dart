@@ -2,9 +2,13 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:smart_shop_client_app/constants/app_text.data.dart';
 import 'package:smart_shop_client_app/features/auth/login/screens/login.screen.dart';
 import 'package:smart_shop_client_app/features/home/screens/home.screen.dart';
+import 'package:smart_shop_client_app/features/loyalty/screens/loyalty.screen.dart';
+import 'package:smart_shop_client_app/features/profile/screens/profile.screen.dart';
 import 'package:smart_shop_client_app/features/scan/screens/scan.screen.dart';
 
 class NavPagesData {
+  static const int defaultScreen = 4;
+
   static List<Map<String, dynamic>> pages = [
     {
       "index": 0,
@@ -15,7 +19,7 @@ class NavPagesData {
     {
       "index": 1,
       "title": AppText.loyalties,
-      "widget": const LoginScreen(),
+      "widget": const Loyalty(),
       "icon": FontAwesomeIcons.heart,
     },
     {
@@ -33,7 +37,7 @@ class NavPagesData {
     {
       "index": 4,
       "title": AppText.profile,
-      "widget": const LoginScreen(),
+      "widget": const Profile(),
       "icon": FontAwesomeIcons.circleUser,
     },
   ];

@@ -8,7 +8,6 @@ import 'package:smart_shop_client_app/core/helpers/text_style.helper.dart';
 import 'package:smart_shop_client_app/core/widgets/base_view.component.dart';
 import 'package:smart_shop_client_app/core/widgets/button.component.dart';
 import 'package:smart_shop_client_app/features/scan/components/scan_header.component.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:smart_shop_client_app/features/scan/components/scanner_frame.component.dart';
 import 'package:smart_shop_client_app/features/scan/providers/shopping.provider.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -20,11 +19,11 @@ class Scan extends StatelessWidget {
   Widget build(BuildContext context) {
     return BaseView(
       body: [
-        MobileScanner(
+        /* MobileScanner(
           onDetect: (result) {
             print(result.barcodes.first.rawValue);
           },
-        ),
+        ), */
         CustomPaint(
           painter: ScannerFramePainter(),
           child: [

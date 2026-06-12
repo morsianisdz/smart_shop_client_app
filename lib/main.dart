@@ -14,6 +14,7 @@ import 'package:smart_shop_client_app/features/main/providers/main.provider.dart
 import 'package:smart_shop_client_app/features/main/screens/main.screen.dart';
 import 'package:smart_shop_client_app/features/scan/providers/shopping.provider.dart';
 import 'package:smart_shop_client_app/shared/providers/market.provider.dart';
+import 'package:smart_shop_client_app/shared/providers/user.provider.dart';
 
 final getIt = GetIt.instance;
 
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(create: (_) => ThemeProvider()),
           ChangeNotifierProvider(create: (_) => MainProvider()),
           ChangeNotifierProvider(create: (_) => ShoppingProvider()),
-          
+          ChangeNotifierProvider(create: (_) => UserProvier()),
         ],
         child: GetMaterialApp(
           title: AppText.appTitle,
@@ -56,6 +57,7 @@ void setupLocator() {
   getIt.registerLazySingleton<MarketProvider>(() => MarketProvider());
   getIt.registerLazySingleton<MainProvider>(() => MainProvider());
   getIt.registerLazySingleton<ShoppingProvider>(() => ShoppingProvider());
+  getIt.registerLazySingleton<UserProvier>(() => UserProvier());
 }
 
 

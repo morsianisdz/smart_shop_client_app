@@ -134,7 +134,8 @@ class AppText {
   static const String seeRewards = "see_rewards";
   static const String favoritCart = "favorit_cart";
   static const String offers = "offers";
-  static const String yourInStoreShoppingHelper = "you_r_in_store_shopping_helper";
+  static const String yourInStoreShoppingHelper =
+      "you_r_in_store_shopping_helper";
 
   static const String httpError = "http_error";
   static const String forgot = "forgot";
@@ -155,7 +156,8 @@ class AppText {
   static const String xRemaining = "x_remaining";
   static const String adjustLimit = "adjust_limit";
   static const String activeShoppingLimit = "active_shopping_limit";
-  static const String searchProductsBrandsAisles = "Search_products_brands_aisles";
+  static const String searchProductsBrandsAisles =
+      "Search_products_brands_aisles";
   static const String startInStoreScanning = "start_in_store_scanning";
   static const String mySavedOffers = "my_saved_offers";
   static const String seeAll = "see_all";
@@ -167,4 +169,18 @@ class AppText {
   static const String addQuantity = "add_quantity";
   static const String expectedSubTotal = "expected_sub_total";
   static const String cancel = "cancel";
+  static const String loyaltyRewardsHub = "loyalty_rewards_hub";
+  static const String yourBalance = "your_balance";
+  static const String pts = "pts";
+  static const String goldTierMember = "gold_tier_member";
+  static const String tapToScanMemberCard = "tap_to_scan_member_card";
+  static const String availableRedemptions = "available_redemptions";
+  static const String weeklyDigitalCoupons = "weekly_digital_coupons";
+  static const String xOff = "x_off";  
+  static const String clipCoupon = "clip_coupon";  static const String accountSettings = "account_settings";  static const String shoppingControls = "shopping_controls";
+
+
+
+  
+
 }

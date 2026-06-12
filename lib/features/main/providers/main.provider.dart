@@ -3,7 +3,7 @@ import 'package:smart_shop_client_app/config/nav_pages.data.dart';
 import 'package:smart_shop_client_app/features/main/models/page.model.dart';
 
 class MainProvider extends ChangeNotifier {
-  int _currentIndex = 2;
+  int _currentIndex = NavPagesData.defaultScreen;
 
   final List<AppPage> _pages = AppPage.fromList(NavPagesData.pages);
 

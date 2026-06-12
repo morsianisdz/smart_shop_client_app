@@ -1,8 +1,11 @@
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:smart_shop_client_app/core/models/cimage.model.dart';
+import 'package:smart_shop_client_app/features/loyalty/models/coupon.model.dart';
+import 'package:smart_shop_client_app/features/loyalty/models/reward.model.dart';
 import 'package:smart_shop_client_app/shared/models/product.model.dart';
+import 'package:smart_shop_client_app/shared/models/user.model.dart';
 
 class FakeData {
-  
   static List<Product> products = [
     Product(
       id: 1,
@@ -30,4 +33,54 @@ class FakeData {
       ),
     ),
   ];
+
+  static List<Reward> rewards = [
+    Reward(
+      id: 1,
+      discount: '5',
+      description: 'Bakery & Deli Items',
+      points: 150,
+    ),
+    Reward(
+      id: 2,
+      discount: '15',
+      description: 'Fresh Meat Produce',
+      points: 300,
+    ),
+    Reward(
+      id: 3,
+      discount: '20',
+      description: 'Dairy & Frozen Goods',
+      points: 400,
+    ),
+  ];
+
+  static List<Coupon> coupons = [
+    Coupon(
+      id: 1,
+      icon: FontAwesomeIcons.beerMugEmpty,
+      tagText: "20% OFF",
+      title: "Organic Milk 1G",
+      subtitle: "All fat variants",
+    ),
+    Coupon(
+      id: 2,
+      icon: FontAwesomeIcons.mugHot,
+      tagText: "\$2.50 OFF",
+      title: "Coffee Beans",
+      subtitle: "Arabica blends",
+    ),
+  ];
+
+  static User user = User(
+    id: 1,
+    username: "MorsiAnisDZ",
+    phoneNumber: "+213660311490",
+    email: "tadjeddineanismorsi@gmail.com",
+    token: "jhkzerjzerjkzrkhuzherjkzer6465468zeerkzerjzer4564z46zer",
+    image: CImage(
+      url:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC8kiSH5ZSAcVoj3tAQQDoP_ux0sSricMyUg&s",
+    ),
+  );
 }

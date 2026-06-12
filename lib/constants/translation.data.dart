@@ -81,7 +81,19 @@ class LocaleTranslation extends Translations {
       "add_quantity": "Add Quantity",
       "expected_sub_total": "Expected Sub Total",
       "cancel": "Cancel",
-      "add_to_cart": "Add To Cart"
+      "add_to_cart": "Add To Cart",
+      "loyalty_rewards_hub": "Loyalty Rewards Hub",
+      "your_balance": "Your Balance",
+      "pts": "pts",
+      "gold_tier_member": "Gold Tier Member",
+      "tap_to_scan_member_card": "Tap To Scan Member Card",
+      "available_redemptions": "Available Redemptions",
+      "weekly_digital_coupons": "Weekly Digital Coupons",
+      "x_off": "%s Off",
+      "clipcoupon": "clipCoupon",
+      "clip_coupon": "Clip Coupon",
+      "account_settings": "Account settings",
+      "shopping_controls": "Shopping Controls"
     },
     "ar": {
       "introduction": "مقدمة",
