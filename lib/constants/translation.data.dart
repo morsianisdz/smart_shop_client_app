@@ -93,7 +93,15 @@ class LocaleTranslation extends Translations {
       "clipcoupon": "clipCoupon",
       "clip_coupon": "Clip Coupon",
       "account_settings": "Account settings",
-      "shopping_controls": "Shopping Controls"
+      "shopping_controls": "Shopping Controls",
+      "monthly_spending_limit": "Monthly Spending Limit",
+      "current_cap_x": "Current Cap: %S",
+      "adjust": "Adjust",
+      "preferences_data": "Preferences & Data",
+      "purchase_history": "Purchase History",
+      "payment_methods": "Payment Methods",
+      "notification_alerts": "Notification Alerts",
+      "log_out_configuration_session": "Log Out Configuration Session"
     },
     "ar": {
       "introduction": "مقدمة",

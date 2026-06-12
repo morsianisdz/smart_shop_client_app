@@ -176,11 +176,16 @@ class AppText {
   static const String tapToScanMemberCard = "tap_to_scan_member_card";
   static const String availableRedemptions = "available_redemptions";
   static const String weeklyDigitalCoupons = "weekly_digital_coupons";
-  static const String xOff = "x_off";  
-  static const String clipCoupon = "clip_coupon";  static const String accountSettings = "account_settings";  static const String shoppingControls = "shopping_controls";
+  static const String xOff = "x_off";
+  static const String clipCoupon = "clip_coupon";
+  static const String accountSettings = "account_settings";
+  static const String shoppingControls = "shopping_controls";
+  static const String monthlySpendingLimit = "monthly_spending_limit";
+  static const String currentCapX = "current_cap_x";  static const String adjust = "adjust";  static const String preferencesData = "preferences_data";  static const String purchaseHistory = "purchase_history";  static const String paymentMethods = "payment_methods";  static const String notificationAlerts = "notification_alerts";  static const String logOutConfigurationSession = "log_out_configuration_session";
 
 
 
-  
+
+
 
 }

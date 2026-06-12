@@ -6,6 +6,7 @@ class ColorsConf {
   static Color blue = const Color(0xFF38BDF8);
   static Color green = const Color(0xFF4ADE80);
   static Color gold = const Color(0xFFFFD700);
+  static Color red = const Color(0xFFF87171);
 
   //dark theme
   static Color textWhite = const Color(0xFFF8FAF0);
@@ -13,7 +14,7 @@ class ColorsConf {
   static Color darkBackground = const Color(0xFF070A13);
   static Color darkContainer = const Color(0xFF111827);
   static Color darkContainer2= const Color(0xFF1E293B);
-  static Color darkgrey = const Color(0xFF9e0b33);
+  static Color darkgrey = const Color(0xFF4B5563);
 
   //light theme
   static Color textBlack = const Color(0xFF111827);

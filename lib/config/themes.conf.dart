@@ -16,7 +16,8 @@ class ThemeConf {
     primaryContainer: ColorsConf.lightContainer,
     secondaryContainer: ColorsConf.lightContainer2,
     onPrimaryContainer: ColorsConf.textdarkGray,
-    onSecondaryContainer: ColorsConf.darkgrey,
+    onSecondaryContainer: ColorsConf.lightgrey,
+    error: ColorsConf.red,
     brightness: Brightness.light,
   );
 
@@ -29,7 +30,8 @@ class ThemeConf {
     primaryContainer: ColorsConf.darkContainer,
     secondaryContainer: ColorsConf.darkContainer2,
     onPrimaryContainer: ColorsConf.textlightGray,
-    onSecondaryContainer: ColorsConf.lightgrey,
+    onSecondaryContainer: ColorsConf.darkgrey,
+    error: ColorsConf.red,
     brightness: Brightness.dark,
   );
 
