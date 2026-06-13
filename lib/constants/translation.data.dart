@@ -105,7 +105,16 @@ class LocaleTranslation extends Translations {
       "progress_to_silver_tier": "Progress To Silver Tier",
       "x_to_y_pts": "%s / %s pts",
       "milestone_rewards_track": "Milestone Rewards Track",
-      "points_ledger_history": "Points Ledger History"
+      "points_ledger_history": "Points Ledger History",
+      "earn_point_loyalty_rewards": "Earn Point Loyalty Rewards",
+      "instant_checkout_scanning": "Instant Checkout Scanning",
+      "smart_budget_controls": "Smart Budget Controls",
+      "take_charge_of_your_finances": "Take charge of your finances. Set customized monthly expenditure spending caps and let SmartShop handle the pacing checks.",
+      "no_plastic_cards_needed": "No plastic cards needed. Scan your digital member identity code straight from your device screen at any register terminal inside the store.",
+      "accumulate_points_automatically": "Accumulate points automatically with every checkout scan and claim vouchers to unlock deep savings on your next retail purchases.",
+      "skip": "skip",
+      "next_step": "Next Step",
+      "get_started": "Get Started"
     },
     "ar": {
       "introduction": "مقدمة",

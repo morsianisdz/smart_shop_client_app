@@ -37,6 +37,7 @@ class BaseView extends StatelessWidget {
       appBar: PreferredSize(
           preferredSize: const Size.fromHeight(75),
           child: AppBar(
+            automaticallyImplyLeading: false,
             clipBehavior: Clip.none,
             leading: appBarLeading,
             title: appBarTitle,

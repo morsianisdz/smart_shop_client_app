@@ -10,12 +10,12 @@ class CircleIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
-          radius: 24,
+          radius: 18,
           backgroundColor: colorScheme(context).secondaryContainer, // Dark surface color
           child: FaIcon(
             icon,
             color: color ?? (isActive ? colorScheme(context).primary : colorScheme(context).onPrimaryContainer),
-            size: 20,
+            size: 16,
           ),
         );
   }

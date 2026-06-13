@@ -7,7 +7,7 @@ import 'package:smart_shop_client_app/features/profile/screens/profile.screen.da
 import 'package:smart_shop_client_app/features/scan/screens/scan.screen.dart';
 
 class NavPagesData {
-  static const int defaultScreen = 3;
+  static const int defaultScreen = 0;
 
   static List<Map<String, dynamic>> pages = [
     {

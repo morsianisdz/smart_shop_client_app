@@ -187,9 +187,21 @@ class AppText {
   static const String purchaseHistory = "purchase_history";
   static const String paymentMethods = "payment_methods";
   static const String notificationAlerts = "notification_alerts";
-  static const String logOutConfigurationSession = "log_out_configuration_session";
+  static const String logOutConfigurationSession =
+      "log_out_configuration_session";
   static const String progressToSilverTier = "progress_to_silver_tier";
-  static const String xToYPts = "x_to_y_pts";  static const String milestoneRewardsTrack = "milestone_rewards_track";  static const String pointsLedgerHistory = "points_ledger_history";
-
-
+  static const String xToYPts = "x_to_y_pts";
+  static const String milestoneRewardsTrack = "milestone_rewards_track";
+  static const String pointsLedgerHistory = "points_ledger_history";
+  static const String earnPointLoyaltyRewards = "earn_point_loyalty_rewards";
+  static const String instantCheckoutScanning = "instant_checkout_scanning";
+  static const String smartBudgetControls = "smart_budget_controls";
+  static const String takeChargeOfYourFinances = "take_charge_of_your_finances";
+  static const String noPlasticCardsNeeded = "no_plastic_cards_needed";
+  static const String accumulatePointsAutomatically =
+      "accumulate_points_automatically";
+  static const String appName = "app_name";
+  static const String skip = "skip";
+  static const String getStarted = "get_started";
+  static const String nextStep = "next_step";
 }

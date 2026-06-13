@@ -25,7 +25,7 @@ class ScanHeader extends StatelessWidget {
           color: colorScheme(context).primaryContainer,
           borderRadius: BorderRadius.circular(30),
         ),
-        child: cTitleMedium(
+        child: cTitleSmall(
           context,
           AppText.aisleXY.trArgs(["4B", "BREAKFAST"]).toUpperCase(),
         ).centered(),

@@ -11,7 +11,8 @@ import 'package:provider/provider.dart';
 import 'package:smart_shop_client_app/core/providers/Theme.provider.dart';
 import 'package:sizer/sizer.dart';
 import 'package:smart_shop_client_app/features/main/providers/main.provider.dart';
-import 'package:smart_shop_client_app/features/main/screens/main.screen.dart';
+import 'package:smart_shop_client_app/features/onboarding/providers/onboarding.provider.dart';
+import 'package:smart_shop_client_app/features/onboarding/screens/onboarding.screen.dart';
 import 'package:smart_shop_client_app/features/scan/providers/shopping.provider.dart';
 import 'package:smart_shop_client_app/shared/providers/market.provider.dart';
 import 'package:smart_shop_client_app/shared/providers/user.provider.dart';
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(create: (_) => MainProvider()),
           ChangeNotifierProvider(create: (_) => ShoppingProvider()),
           ChangeNotifierProvider(create: (_) => UserProvier()),
+          ChangeNotifierProvider(create: (_) => OnboardingProvider()),
         ],
         child: GetMaterialApp(
           title: AppText.appTitle,
@@ -42,7 +44,7 @@ class MyApp extends StatelessWidget {
           translations: LocaleTranslation(),
           locale: SettingsProvider.defaultLanguage,
           theme: GetIt.instance<ThemeProvider>().themeData,
-          home: const Main(),
+          home: const OnboardingScreen(),
         ),
       ),
     );
@@ -58,6 +60,7 @@ void setupLocator() {
   getIt.registerLazySingleton<MainProvider>(() => MainProvider());
   getIt.registerLazySingleton<ShoppingProvider>(() => ShoppingProvider());
   getIt.registerLazySingleton<UserProvier>(() => UserProvier());
+  getIt.registerLazySingleton<OnboardingProvider>(() => OnboardingProvider());
 }
 
 

@@ -62,12 +62,13 @@ Widget cBodyMedium(
   double? fontSize,
   FontWeight? fontWeight,
   String? fontFamily,
+  TextAlign? textAlign
 }) => Text(text, style: Theme.of(context).textTheme.bodyMedium!.copyWith(
         color: color,
         fontSize: fontSize,
         fontWeight: fontWeight,
         fontFamily: fontFamily,
-      ),
+      ), textAlign: textAlign,
     );
 
 Widget cBodySmall(

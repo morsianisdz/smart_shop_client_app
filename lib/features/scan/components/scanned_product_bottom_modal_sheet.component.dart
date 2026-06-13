@@ -35,12 +35,12 @@ class ScannedProductBottomModalSheet extends StatelessWidget {
                 text: product.tag!,
                 color: colorScheme(context).tertiary,
               ).paddingOnly(bottom: 8),
-            cTitleLarge(
+            cTitleMedium(
               context,
               product.name,
               color: colorScheme(context).onSurface,
             ).paddingOnly(bottom: 8),
-            cTitleSmall(context, AppText.eanBarecode.trArgs([product.barcode])),
+            cBodyMedium(context, AppText.eanBarecode.trArgs([product.barcode])),
           ], calign: CrossAxisAlignment.start),
           col([
             cTitleLarge(
@@ -48,7 +48,7 @@ class ScannedProductBottomModalSheet extends StatelessWidget {
               priceBuilder(product.price.toString()),
               color: colorScheme(context).primary,
             ).paddingOnly(bottom: 8),
-            cTitleSmall(context, AppText.inAisleX.trArgs(["4B"])),
+            cBodyMedium(context, AppText.inAisleX.trArgs(["4B"])),
           ]),
         ], align: MainAxisAlignment.spaceBetween, calign: CrossAxisAlignment.end),
         Divider(color: colorScheme(context).onSecondaryContainer, height: 32),
@@ -60,10 +60,10 @@ class ScannedProductBottomModalSheet extends StatelessWidget {
                   icon: FaIcon(
                     FontAwesomeIcons.minus,
                     color: colorScheme(context).onSurface,
-                    size: 18,
+                    size: 14,
                   ),
                 ),
-                cTitleLarge(
+                cTitleMedium(
                   context,
                   product.qty.toString(),
                   fontFamily: ThemeConf.secondaryFontFamily,
@@ -73,7 +73,7 @@ class ScannedProductBottomModalSheet extends StatelessWidget {
                   icon: FaIcon(
                     FontAwesomeIcons.plus,
                     color: colorScheme(context).onSurface,
-                    size: 18,
+                    size: 14,
                   ),
                 ),
               ]),
@@ -94,19 +94,21 @@ class ScannedProductBottomModalSheet extends StatelessWidget {
         row([
           CButton.textOnly(
             () {},
-            cTitleMedium(
+            cTitleSmall(
               context,
               AppText.cancel.tr.toUpperCase(),
               color: colorScheme(context).onSurface,
+              fontWeight: FontWeight.bold
             ),
             backgroundColor: colorScheme(context).onSurface.withValues(alpha: 0.1)
           ).paddingOnly(right: 16).expand(),
           CButton.textOnly(
             () {},
-            cTitleMedium(
+            cTitleSmall(
               context,
               AppText.addToCart.tr.toUpperCase(),
               color: colorScheme(context).onSurface,
+              fontWeight: FontWeight.bold
             )
           ).expand()
         ]),
