@@ -181,11 +181,15 @@ class AppText {
   static const String accountSettings = "account_settings";
   static const String shoppingControls = "shopping_controls";
   static const String monthlySpendingLimit = "monthly_spending_limit";
-  static const String currentCapX = "current_cap_x";  static const String adjust = "adjust";  static const String preferencesData = "preferences_data";  static const String purchaseHistory = "purchase_history";  static const String paymentMethods = "payment_methods";  static const String notificationAlerts = "notification_alerts";  static const String logOutConfigurationSession = "log_out_configuration_session";
-
-
-
-
+  static const String currentCapX = "current_cap_x";
+  static const String adjust = "adjust";
+  static const String preferencesData = "preferences_data";
+  static const String purchaseHistory = "purchase_history";
+  static const String paymentMethods = "payment_methods";
+  static const String notificationAlerts = "notification_alerts";
+  static const String logOutConfigurationSession = "log_out_configuration_session";
+  static const String progressToSilverTier = "progress_to_silver_tier";
+  static const String xToYPts = "x_to_y_pts";  static const String milestoneRewardsTrack = "milestone_rewards_track";  static const String pointsLedgerHistory = "points_ledger_history";
 
 
 }

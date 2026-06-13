@@ -3,17 +3,17 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:smart_shop_client_app/config/colors.conf.dart';
 import 'package:smart_shop_client_app/config/themes.conf.dart';
-import 'package:smart_shop_client_app/config/ui.conf.dart';
 import 'package:smart_shop_client_app/constants/app_text.data.dart';
 import 'package:smart_shop_client_app/constants/fake.data.dart';
 import 'package:smart_shop_client_app/core/helpers/colors.helper.dart';
 import 'package:smart_shop_client_app/core/helpers/list_widget.helper.dart';
 import 'package:smart_shop_client_app/core/helpers/text_style.helper.dart';
 import 'package:smart_shop_client_app/core/widgets/base_view.component.dart';
-import 'package:smart_shop_client_app/core/widgets/button.component.dart';
-import 'package:smart_shop_client_app/features/loyalty/components/coupon_wrap_layout.component.dart';
+import 'package:smart_shop_client_app/features/home/components/custom_tag.component.dart';
+import 'package:smart_shop_client_app/features/home/components/progress_indicator.component.dart';
+import 'package:smart_shop_client_app/features/loyalty/components/point_ledger_history_element.component.dart';
 import 'package:smart_shop_client_app/features/loyalty/components/rewards_carrosel_section.component.dart';
-import 'package:smart_shop_client_app/shared/components/circle_icon.component.dart';
+import 'package:smart_shop_client_app/features/profile/components/menu_element.component.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class Loyalty extends StatelessWidget {
@@ -39,71 +39,63 @@ class Loyalty extends StatelessWidget {
           bottom: 16,
         ),
         Card(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(UiConf.cardBorderRadius),
-            side: BorderSide(color: ColorsConf.gold, width: 0.5),
-          ),
           child: col([
-            row(
-              [
-                col([
-                  cBodyMedium(
-                    context,
-                    AppText.yourBalance.tr.toUpperCase(),
-                    fontFamily: ThemeConf.secondaryFontFamily,
-                  ).paddingOnly(bottom: 12),
-                  row([
-                    cTitleLarge(context, "420").paddingOnly(right: 8),
-                    cTitleSmall(context, AppText.pts.tr),
-                  ], calign: CrossAxisAlignment.end).paddingOnly(bottom: 12),
-                  row([
-                    FaIcon(
-                      FontAwesomeIcons.medal,
-                      color: ColorsConf.gold,
-                      size: 16,
-                    ).paddingOnly(right: 8),
-                    cTitleSmall(
-                      context,
-                      AppText.goldTierMember.tr,
-                      color: ColorsConf.gold,
-                    ),
-                  ]).paddingOnly(bottom: 16),
-                ], calign: CrossAxisAlignment.start),
-                CircleIcon(
-                  icon: FontAwesomeIcons.crown,
-                  color: ColorsConf.gold,
-                ),
-              ],
-              calign: CrossAxisAlignment.start,
-              align: MainAxisAlignment.spaceBetween,
-            ),
-            CButton.withIcon(
-              () {},
-              cTitleMedium(
+            row([
+              cBodyMedium(
                 context,
-                AppText.tapToScanMemberCard.tr,
-                color: colorScheme(context).primaryContainer,
+                AppText.memberStatus.tr.toUpperCase(),
+                fontFamily: ThemeConf.secondaryFontFamily,
               ),
-              backgroundColor: colorScheme(context).onSurface,
-              icon: FaIcon(
-                FontAwesomeIcons.qrcode,
-                color: colorScheme(context).primaryContainer,
+              CTag(text: AppText.bronzeTier.tr, color: ColorsConf.gold),
+            ], align: MainAxisAlignment.spaceBetween).paddingOnly(bottom: 8),
+            row([
+              cTitleLarge(context, "320").paddingOnly(right: 4),
+              cTitleSmall(context, AppText.pts.tr, color: ColorsConf.gold),
+            ], calign: CrossAxisAlignment.end).paddingOnly(bottom: 16),
+            row([
+              cTitleSmall(context, AppText.progressToSilverTier.tr),
+              cBodyMedium(
+                context,
+                AppText.xToYPts.trArgs(["300", "500"]),
+                color: colorScheme(context).onSurface,
               ),
-            ).h(45),
-          ]).p(16),
+            ], align: MainAxisAlignment.spaceBetween).paddingOnly(bottom: 8),
+            CProgressIndicator(
+              value: 0.6,
+              color: ColorsConf.gold,
+            ).paddingOnly(bottom: 8),
+          ], calign: CrossAxisAlignment.start).paddingAll(16),
+        ).paddingOnly(bottom: 16),
+        Card(
+          child: MenuElement(
+            icon: FontAwesomeIcons.qrcode,
+            text: AppText.tapToScanMemberCard.tr,
+          ).p16(),
         ).paddingOnly(bottom: 16),
         cTitleSmall(
           context,
-          AppText.availableRedemptions.tr.toUpperCase(),
-          fontFamily: ThemeConf.secondaryFontFamily, fontWeight: FontWeight.bold
+          AppText.milestoneRewardsTrack.tr.toUpperCase(),
+          fontFamily: ThemeConf.secondaryFontFamily,
+          fontWeight: FontWeight.bold,
         ).paddingOnly(bottom: 16),
         RewardCarouselSection().paddingOnly(bottom: 16),
         cTitleSmall(
           context,
-          AppText.weeklyDigitalCoupons.tr.toUpperCase(),
-          fontFamily: ThemeConf.secondaryFontFamily, fontWeight: FontWeight.bold
+          AppText.pointsLedgerHistory.tr.toUpperCase(),
+          fontFamily: ThemeConf.secondaryFontFamily,
+          fontWeight: FontWeight.bold,
         ).paddingOnly(bottom: 16),
-        CouponWrapLayout(coupons: FakeData.coupons)
+        Card(
+          child: col(
+            FakeData.mockLedgerHistory
+                .mapIndexed(
+                  (mockLedgerEelement, index) => PointLedgerHistoryEelement(
+                    pointLedger: mockLedgerEelement, isLastEelement: (FakeData.mockLedgerHistory.length - index - 1) == 0,
+                  ),
+                )
+                .toList(),
+          ).scrollVertical(),
+        ).h(220),
       ], calign: CrossAxisAlignment.start),
     ).paddingSymmetric(horizontal: 16);
   }

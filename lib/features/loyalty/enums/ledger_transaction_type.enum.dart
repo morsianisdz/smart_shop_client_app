@@ -1,0 +1,3 @@
+enum LedgerTransactionType {
+  accrual, redemption
+}

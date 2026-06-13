@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/utils.dart';
 import 'package:smart_shop_client_app/constants/app_text.data.dart';
 import 'package:smart_shop_client_app/core/helpers/colors.helper.dart';
+import 'package:smart_shop_client_app/core/helpers/list_widget.helper.dart';
 import 'package:smart_shop_client_app/core/helpers/text_style.helper.dart';
 import 'package:smart_shop_client_app/shared/components/circle_icon.component.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -12,7 +13,7 @@ class ScanHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return [
+    return row([
       CircleIcon(
         icon: FontAwesomeIcons.bolt,
         isActive: true,
@@ -34,6 +35,6 @@ class ScanHeader extends StatelessWidget {
         icon: FontAwesomeIcons.keyboard,
         isActive: false,
       ).paddingOnly(right: 12),
-    ].row().paddingSymmetric(horizontal: 16, vertical: 8).h(60);
+    ]).paddingSymmetric(horizontal: 16, vertical: 8).h(60);
   }
 }

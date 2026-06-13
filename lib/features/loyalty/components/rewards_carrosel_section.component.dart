@@ -37,7 +37,7 @@ class RewardCarouselSection extends StatelessWidget {
               return RewardCard(reward: FakeData.rewards[index]);
             },
           ),
-        ).h(180).paddingOnly(bottom: 16),
+        ).h(180).paddingOnly(bottom: 4),
 
         ValueListenableBuilder<double>(
           valueListenable: _scrollProgress,

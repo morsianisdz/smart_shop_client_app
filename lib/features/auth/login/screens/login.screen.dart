@@ -5,6 +5,7 @@ import 'package:smart_shop_client_app/config/colors.conf.dart';
 import 'package:smart_shop_client_app/config/themes.conf.dart';
 import 'package:smart_shop_client_app/constants/app_text.data.dart';
 import 'package:smart_shop_client_app/core/helpers/colors.helper.dart';
+import 'package:smart_shop_client_app/core/helpers/list_widget.helper.dart';
 import 'package:smart_shop_client_app/core/helpers/text_style.helper.dart';
 import 'package:smart_shop_client_app/core/widgets/base_view.component.dart';
 import 'package:smart_shop_client_app/core/widgets/button.component.dart';
@@ -22,7 +23,7 @@ class LoginScreen extends StatelessWidget {
 
     return BaseView(
       body:
-          [
+          col([
                 LogoWidget().centered().paddingSymmetric(vertical: 48),
                 cTitleSmall(
                   context,
@@ -33,7 +34,7 @@ class LoginScreen extends StatelessWidget {
                   controller: TextEditingController(),
                   prefixIcon: Icon(Icons.email, color: iconsColor),
                 ).paddingOnly(bottom: 20),
-                [
+                row([
                       cTitleSmall(
                         context,
                         AppText.password.tr.toUpperCase(),
@@ -46,8 +47,7 @@ class LoginScreen extends StatelessWidget {
                         color: colorScheme(context).primary,
                         fontWeight: FontWeight.bold,
                       ).onTap(() {}),
-                    ]
-                    .row(alignment: MainAxisAlignment.spaceBetween)
+                    ], align: MainAxisAlignment.spaceBetween)
                     .paddingOnly(bottom: 8),
                 CInputField(
                   controller: TextEditingController(),
@@ -65,7 +65,7 @@ class LoginScreen extends StatelessWidget {
                 ),
                 Spacer(),
                 AuthDevider().paddingOnly(bottom: 28),
-                [
+                row([
                   CButton.withIcon(
                     () {},
                     cTitleMedium(
@@ -90,8 +90,8 @@ class LoginScreen extends StatelessWidget {
                     ),
                     backgroundColor: colorScheme(context).primaryContainer,
                   ).flexible(),
-                ].row().paddingOnly(bottom: 28),
-                [
+                ]).paddingOnly(bottom: 28),
+                row([
                       cTitleSmall(
                         context,
                         AppText.news.tr,
@@ -101,11 +101,9 @@ class LoginScreen extends StatelessWidget {
                         AppText.createAccount.tr,
                         color: colorScheme(context).primary,
                       ).onTap(() {}),
-                    ]
-                    .row(alignment: MainAxisAlignment.center)
+                    ], align: MainAxisAlignment.center)
                     .paddingOnly(bottom: 48),
-              ]
-              .column(crossAlignment: CrossAxisAlignment.start)
+              ], calign: CrossAxisAlignment.start)
               .paddingSymmetric(horizontal: 24),
     );
   }

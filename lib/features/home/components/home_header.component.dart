@@ -5,9 +5,9 @@ import 'package:smart_shop_client_app/config/themes.conf.dart';
 import 'package:smart_shop_client_app/config/ui.conf.dart';
 import 'package:smart_shop_client_app/constants/app_text.data.dart';
 import 'package:smart_shop_client_app/core/helpers/colors.helper.dart';
+import 'package:smart_shop_client_app/core/helpers/list_widget.helper.dart';
 import 'package:smart_shop_client_app/core/helpers/text_style.helper.dart';
 import 'package:smart_shop_client_app/features/home/components/user_avatar.component.dart';
-import 'package:velocity_x/velocity_x.dart';
 import 'package:badges/badges.dart' as badges;
 
 class HomeHeader extends StatelessWidget {
@@ -15,9 +15,9 @@ class HomeHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return [
+    return row([
       UserAvatar().paddingOnly(right: 12),
-      [
+      col([
         cTitleSmall(
           context,
           AppText.welcome.tr.toUpperCase(),
@@ -28,9 +28,9 @@ class HomeHeader extends StatelessWidget {
           AppText.hello.trArgs(["John"]),
           color: colorScheme(context).onSurface,
         ),
-      ].column(),
+      ]),
       const Spacer(),
-      [
+      row([
         badges.Badge(
           badgeContent: Text("3"),
           child: FaIcon(
@@ -47,7 +47,7 @@ class HomeHeader extends StatelessWidget {
             size: UiConf.iconHeight,
           ),
         ),
-      ].row(),
-    ].row();
+      ]),
+    ]);
   }
 }

@@ -6,6 +6,7 @@ import 'package:smart_shop_client_app/config/themes.conf.dart';
 import 'package:smart_shop_client_app/constants/app_text.data.dart';
 import 'package:smart_shop_client_app/constants/fake.data.dart';
 import 'package:smart_shop_client_app/core/helpers/colors.helper.dart';
+import 'package:smart_shop_client_app/core/helpers/list_widget.helper.dart';
 import 'package:smart_shop_client_app/core/helpers/text_style.helper.dart';
 import 'package:smart_shop_client_app/core/widgets/base_view.component.dart';
 import 'package:smart_shop_client_app/core/widgets/button.component.dart';
@@ -23,7 +24,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseView(
-      body: [
+      body: col([
         HomeHeader().paddingOnly(top: 48, bottom: 18),
         CInputField(
           controller: TextEditingController(),
@@ -31,33 +32,31 @@ class Home extends StatelessWidget {
           text: AppText.searchProductsBrandsAisles.tr,
         ).paddingOnly(bottom: 16),
         Card(
-          child: [
-            [
+          child: col([
+            row([
                   cTitleSmall(
                     context,
                     AppText.memberStatus.tr.toUpperCase(),
                     fontFamily: ThemeConf.secondaryFontFamily,
                   ),
                   CTag(text: AppText.bronzeTier.tr, color: colorScheme(context).secondary),
-                ]
-                .row(alignment: MainAxisAlignment.spaceBetween)
+                ], align: MainAxisAlignment.spaceBetween)
                 .paddingOnly(bottom: 8),
-            [
+            row([
                   cTitleLarge(context, "150").paddingOnly(right: 4),
                   cTitleMedium(
                     context,
                     AppText.xpoints.tr.toUpperCase(),
                     color: colorScheme(context).secondary,
                   ),
-                ]
-                .row(crossAlignment: CrossAxisAlignment.end)
+                ], calign: CrossAxisAlignment.end)
                 .paddingOnly(bottom: 16),
             CProgressIndicator(
               value: 0.6,
               color: colorScheme(context).secondary,
             ).paddingOnly(bottom: 8),
 
-            [
+            row([
               cBodyMedium(
                 context,
                 AppText.xpts.trArgs(["5"]),
@@ -68,12 +67,12 @@ class Home extends StatelessWidget {
                 AppText.newRewardx.trArgs(["258"]),
                 fontFamily: ThemeConf.secondaryFontFamily,
               ),
-            ].row(alignment: MainAxisAlignment.spaceBetween),
-          ].column(crossAlignment: CrossAxisAlignment.start).paddingAll(16),
+            ], align: MainAxisAlignment.spaceBetween),
+          ], calign: CrossAxisAlignment.start).paddingAll(16),
         ).paddingOnly(bottom: 16),
         Card(
-          child: [
-            [
+          child: col([
+            row([
                   cTitleSmall(
                     context,
                     AppText.activeShoppingLimit.tr.toUpperCase(),
@@ -84,10 +83,9 @@ class Home extends StatelessWidget {
                     AppText.xused.trArgs(["30"]),
                     color: colorScheme(context).primary,
                   ),
-                ]
-                .row(alignment: MainAxisAlignment.spaceBetween)
+                ], align: MainAxisAlignment.spaceBetween)
                 .paddingOnly(bottom: 8),
-            [
+            row([
                   cTitleLarge(
                     context,
                     priceBuilder("15.00"),
@@ -96,15 +94,14 @@ class Home extends StatelessWidget {
                     context,
                     AppText.amountLimit.trArgs([priceBuilder("50.00")]),
                   ),
-                ]
-                .row(crossAlignment: CrossAxisAlignment.end)
+                ], calign: CrossAxisAlignment.end)
                 .paddingOnly(bottom: 16),
             CProgressIndicator(
               value: 0.2,
               color: colorScheme(context).primary,
             ).paddingOnly(bottom: 8),
 
-            [
+            row([
               cBodyMedium(
                 context,
                 AppText.xRemaining.trArgs([priceBuilder("35.88")]),
@@ -115,8 +112,8 @@ class Home extends StatelessWidget {
                 AppText.adjustLimit.tr,
                 fontFamily: ThemeConf.secondaryFontFamily,
               ),
-            ].row(alignment: MainAxisAlignment.spaceBetween),
-          ].column(crossAlignment: CrossAxisAlignment.start).paddingAll(16),
+            ], align: MainAxisAlignment.spaceBetween),
+          ], calign: CrossAxisAlignment.start).paddingAll(16),
         ).paddingOnly(bottom: 18),
         CButton.withIcon(
           () {},
@@ -130,7 +127,7 @@ class Home extends StatelessWidget {
             color: ColorsConf.textWhite,
           ),
         ).paddingOnly(bottom: 24),
-        [
+        row([
               cTitleSmall(
                 context,
                 AppText.mySavedOffers.tr.toUpperCase(),
@@ -143,11 +140,10 @@ class Home extends StatelessWidget {
                 color: colorScheme(context).primary,
                 fontWeight: FontWeight.bold,
               ).onTap(() {}),
-            ]
-            .row(alignment: MainAxisAlignment.spaceBetween)
+            ], align: MainAxisAlignment.spaceBetween)
             .paddingOnly(bottom: 12),
             ProductWrapLayout(products: FakeData.products)
-      ].column().paddingSymmetric(horizontal: 16),
+      ]).paddingSymmetric(horizontal: 16),
     );
   }
 }

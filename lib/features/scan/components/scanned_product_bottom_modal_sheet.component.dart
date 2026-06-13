@@ -4,6 +4,7 @@ import 'package:get/get_utils/src/extensions/export.dart';
 import 'package:smart_shop_client_app/config/themes.conf.dart';
 import 'package:smart_shop_client_app/constants/app_text.data.dart';
 import 'package:smart_shop_client_app/core/helpers/colors.helper.dart';
+import 'package:smart_shop_client_app/core/helpers/list_widget.helper.dart';
 import 'package:smart_shop_client_app/core/helpers/text_style.helper.dart';
 import 'package:smart_shop_client_app/core/widgets/button.component.dart';
 import 'package:smart_shop_client_app/features/home/components/custom_tag.component.dart';
@@ -25,10 +26,10 @@ class ScannedProductBottomModalSheet extends StatelessWidget {
         borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
       ),
       padding: const EdgeInsets.all(24),
-      child: [
+      child: col([
         DragHandle().paddingOnly(bottom: 24),
-        [
-          [
+        row([
+          col([
             if (product.tag != null)
               CTag(
                 text: product.tag!,
@@ -40,23 +41,20 @@ class ScannedProductBottomModalSheet extends StatelessWidget {
               color: colorScheme(context).onSurface,
             ).paddingOnly(bottom: 8),
             cTitleSmall(context, AppText.eanBarecode.trArgs([product.barcode])),
-          ].column(crossAlignment: CrossAxisAlignment.start),
-          [
+          ], calign: CrossAxisAlignment.start),
+          col([
             cTitleLarge(
               context,
               priceBuilder(product.price.toString()),
               color: colorScheme(context).primary,
             ).paddingOnly(bottom: 8),
             cTitleSmall(context, AppText.inAisleX.trArgs(["4B"])),
-          ].column(),
-        ].row(
-          alignment: MainAxisAlignment.spaceBetween,
-          crossAlignment: CrossAxisAlignment.end,
-        ),
+          ]),
+        ], align: MainAxisAlignment.spaceBetween, calign: CrossAxisAlignment.end),
         Divider(color: colorScheme(context).onSecondaryContainer, height: 32),
         [
               cTitleSmall(context, AppText.addQuantity.tr),
-              [
+              row([
                 IconButton(
                   onPressed: () {},
                   icon: FaIcon(
@@ -78,7 +76,7 @@ class ScannedProductBottomModalSheet extends StatelessWidget {
                     size: 18,
                   ),
                 ),
-              ].row(),
+              ]),
             ]
             .row(alignment: MainAxisAlignment.spaceBetween)
             .paddingOnly(bottom: 24),
@@ -93,7 +91,7 @@ class ScannedProductBottomModalSheet extends StatelessWidget {
             .row(alignment: MainAxisAlignment.spaceBetween)
             .paddingOnly(bottom: 24),
 
-        [
+        row([
           CButton.textOnly(
             () {},
             cTitleMedium(
@@ -111,8 +109,8 @@ class ScannedProductBottomModalSheet extends StatelessWidget {
               color: colorScheme(context).onSurface,
             )
           ).expand()
-        ].row(),
-      ].column(axisSize: MainAxisSize.min),
+        ]),
+      ], size: MainAxisSize.min),
     );
   }
 }

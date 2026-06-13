@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/utils.dart';
+import 'package:smart_shop_client_app/config/colors.conf.dart';
 import 'package:smart_shop_client_app/constants/app_text.data.dart';
 import 'package:smart_shop_client_app/core/helpers/colors.helper.dart';
 import 'package:smart_shop_client_app/core/helpers/list_widget.helper.dart';
@@ -21,13 +23,15 @@ class RewardCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: col([
-        cTitleLarge(
+        row([cTitleSmall(
           context,
           AppText.xOff.trArgs([priceBuilder(reward.discount)]),
+          fontWeight: FontWeight.bold,
           color: colorScheme(context).primary,
-        ).paddingOnly(bottom: 5),
+        ),
+        FaIcon(FontAwesomeIcons.solidCircleCheck, size: 12, color: ColorsConf.green)
+        ], align: MainAxisAlignment.spaceBetween).paddingOnly(bottom: 5),
         cBodyMedium(context, reward.description),
-
         const Spacer(),
         CButton.textOnly(
           () {},

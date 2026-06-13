@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_utils/src/extensions/export.dart';
 import 'package:smart_shop_client_app/core/helpers/colors.helper.dart';
 import 'package:smart_shop_client_app/core/helpers/image_builder.helper.dart';
+import 'package:smart_shop_client_app/core/helpers/list_widget.helper.dart';
 import 'package:smart_shop_client_app/core/helpers/text_style.helper.dart';
 import 'package:smart_shop_client_app/features/home/components/custom_tag.component.dart';
 import 'package:smart_shop_client_app/shared/helpers/price_builder.helper.dart';
@@ -17,7 +18,7 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: [
-        [
+        col([
           ImageBuilderHelper.coverUrl(
             product.image!.url,
             width: 50,
@@ -33,7 +34,7 @@ class ProductCard extends StatelessWidget {
               .make()
               .w(double.infinity)
               .paddingOnly(bottom: 4),
-          [
+          row([
             cTitleSmall(
               context,
               priceBuilder(product.price.toString()),
@@ -50,8 +51,8 @@ class ProductCard extends StatelessWidget {
                   .make()
                   .paddingOnly(left: 8),
             ],
-          ].row(),
-        ].column().paddingOnly(top: 8),
+          ]),
+        ]).paddingOnly(top: 8),
         if (product.tag != null)
           CTag(
             text: product.tag!,

@@ -1,6 +1,8 @@
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:smart_shop_client_app/core/models/cimage.model.dart';
+import 'package:smart_shop_client_app/features/loyalty/enums/ledger_transaction_type.enum.dart';
 import 'package:smart_shop_client_app/features/loyalty/models/coupon.model.dart';
+import 'package:smart_shop_client_app/features/loyalty/models/point_ledger_history.model.dart';
 import 'package:smart_shop_client_app/features/loyalty/models/reward.model.dart';
 import 'package:smart_shop_client_app/shared/models/product.model.dart';
 import 'package:smart_shop_client_app/shared/models/user.model.dart';
@@ -83,4 +85,31 @@ class FakeData {
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC8kiSH5ZSAcVoj3tAQQDoP_ux0sSricMyUg&s",
     ),
   );
+
+  static List<PointLedger> mockLedgerHistory = [
+  PointLedger(
+    id: '1',
+    title: 'Central Grocers Store #12',
+    subtitle: 'June 12, 2026 • Receipt #1094',
+    transactionDate: DateTime(2026, 6, 12),
+    pointsAmount: 120,
+    type: LedgerTransactionType.accrual, // إضافة نقاط
+  ),
+  PointLedger(
+    id: '2',
+    title: '\$5 Reward Voucher Claim',
+    subtitle: 'June 04, 2026 • Digital Redemption',
+    transactionDate: DateTime(2026, 6, 4),
+    pointsAmount: 150,
+    type: LedgerTransactionType.redemption, // خصم نقاط
+  ),
+  PointLedger(
+    id: '3',
+    title: 'Organic Harvest Co-Op',
+    subtitle: 'May 28, 2026 • Receipt #0041',
+    transactionDate: DateTime(2026, 5, 28),
+    pointsAmount: 450,
+    type: LedgerTransactionType.accrual, // إضافة نقاط
+  ),
+];
 }

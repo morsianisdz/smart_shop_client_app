@@ -101,7 +101,11 @@ class LocaleTranslation extends Translations {
       "purchase_history": "Purchase History",
       "payment_methods": "Payment Methods",
       "notification_alerts": "Notification Alerts",
-      "log_out_configuration_session": "Log Out Configuration Session"
+      "log_out_configuration_session": "Log Out Configuration Session",
+      "progress_to_silver_tier": "Progress To Silver Tier",
+      "x_to_y_pts": "%s / %s pts",
+      "milestone_rewards_track": "Milestone Rewards Track",
+      "points_ledger_history": "Points Ledger History"
     },
     "ar": {
       "introduction": "مقدمة",

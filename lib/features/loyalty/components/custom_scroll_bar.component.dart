@@ -17,7 +17,7 @@ class CustomScrollBar extends StatelessWidget {
 
     return Container(
       width: totalBarWidth,
-      height: 24,
+      height: 8,
       decoration: BoxDecoration(
         color: const Color(0xFF101725),
         borderRadius: BorderRadius.circular(4),
