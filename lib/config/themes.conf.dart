@@ -75,7 +75,8 @@ class ThemeConf {
       borderRadius: BorderRadius.circular(UiConf.inputCornerRadius),
       borderSide: BorderSide.none,
     ),
-    hintStyle: TextStyle(color: colorScheme.onSecondaryContainer, fontSize: UiConf.hintFontSize),
+    errorStyle: TextStyle(fontSize: UiConf.errorTextFontSize),
+    hintStyle: TextStyle(color: colorScheme.onPrimaryContainer, fontSize: UiConf.hintFontSize),
     fillColor: colorScheme.primaryContainer,
   );
 
@@ -151,5 +152,5 @@ class ThemeConf {
     iconButtonTheme: iconButtonThemeBuilder(darkColorS)
   );
 
-    static ThemeData currentTheme = dark;
+  static ThemeData currentTheme = dark;
 }

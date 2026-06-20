@@ -1,8 +1,14 @@
+import 'dart:ui';
+
+import 'package:get/get.dart';
+import 'package:smart_shop_client_app/config/colors.conf.dart';
+
 class UiConf {
   //input text
   static const double inputHintTextFontSize = 14;
   static const double inputCornerRadius = 16;
-  static const double hintFontSize = 14;
+  static const double hintFontSize = 16;
+  static const double errorTextFontSize = 14;
 
   //button
   static const double buttonHeight = 40;
@@ -24,7 +30,7 @@ class UiConf {
   static double titleSmallFontSize = 14;
   static double bodyLargeFontSize = 18;
   static double bodyMediumFontSize = 12;
-  static double bodySmallFontSize = 8;
+  static double bodySmallFontSize = 9;
 
   //card
   static double cardBorderRadius = 16;
@@ -44,4 +50,10 @@ class UiConf {
   static const double navBarItemCornerRadius = 16.0;
   static const double navBarItemHorizontalPadding = 12.0;
   static const double navBarItemVerticalPadding = 12.0;
+
+  //snack position
+  static Color failedColor = ColorsConf.red;
+  static Color successColor = ColorsConf.green;
+  static SnackPosition snackPosition = SnackPosition.BOTTOM;
+  static double maxWidth = 200;
 }

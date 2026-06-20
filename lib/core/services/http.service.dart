@@ -1,9 +1,10 @@
 import 'dart:async';
 import 'package:dio/dio.dart';
+import 'package:get/get.dart' as navigate;
 import 'package:smart_shop_client_app/config/http.conf.dart';
-import 'package:smart_shop_client_app/constants/app_text.data.dart';
 import 'package:smart_shop_client_app/core/models/http_request.model.dart';
-import 'package:get/get.dart';
+import 'package:smart_shop_client_app/core/services/localStorage.service.dart';
+import 'package:smart_shop_client_app/features/auth/screens/login.screen.dart';
 
 class HttpService {
   final dio = Dio();
@@ -24,10 +25,32 @@ class HttpService {
     dio.options.receiveTimeout = requestConf.timeLimit;
   }
 
+  String _handleErrors(DioException e) {
+    if (e.response == null) {
+      return 'Error sending request';
+    }
+    switch (e.response!.statusCode) {
+      case 500:
+        return e.response!.data;
+      case 401 || 403:
+        navigate.Get.offAll(() => const LoginScreen());
+        return 'unauthorized';
+      default:
+        return 'Error sending request';
+    }
+  }
+
   Future<dynamic> get(String function,
-      {Map<String, dynamic> params = const {},
+      {bool withbearer = true,
+      Map<String, dynamic> params = const {},
       HttpRequestModel httpRequestConf = HttpConf.marketHost}) async {
     _configureDio(httpRequestConf);
+    if (withbearer) {
+      String? token = await LocalStorageService().shpReadString('token');
+      if (token != null) {
+        dio.options.headers.addAll({'Authorization': 'Bearer $token'});
+      }
+    }
 
     try {
       final response = await dio.get('/api/$function', queryParameters: params);
@@ -37,17 +60,25 @@ class HttpService {
       }
 
       return response.data;
-    } on DioException catch (_) {
-      throw AppText.httpError.tr;
+    } on DioException catch (e) {
+      throw _handleErrors(e);
     } catch (e) {
       rethrow;
     }
   }
 
   Future<dynamic> post(String function, Map<String, dynamic> data,
-      {Map<String, dynamic> params = const {},
+      {bool withbearer = true,
+      Map<String, dynamic> params = const {},
       HttpRequestModel httpRequestConf = HttpConf.marketHost}) async {
     _configureDio(httpRequestConf);
+
+    if (withbearer) {
+      String? token = await LocalStorageService().shpReadString('token');
+      if (token != null) {
+        dio.options.headers.addAll({'Authorization': 'Bearer $token'});
+      }
+    }
 
     try {
       final response =
@@ -57,8 +88,47 @@ class HttpService {
         throw response.data['errors'];
       }
       return response.data;
-    } on DioException catch (_) {
-      throw AppText.httpError.tr;
+    } on DioException catch (e) {
+      throw _handleErrors(e);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<dynamic> multipartPost(String function, Map file,
+      {Map<String, dynamic> data = const {},
+      bool withbearer = true,
+      Map<String, dynamic> params = const {},
+      HttpRequestModel httpRequestConf = HttpConf.marketHost}) async {
+    _configureDio(httpRequestConf);
+    dio.options.headers = <String, String>{
+      'Content-Type': 'multipart/form-data',
+    };
+    if (withbearer) {
+      String? token = await LocalStorageService().shpReadString('token');
+      if (token != null) {
+        dio.options.headers.addAll(
+            {'Authorization': 'Bearer $token', 'Accept': 'application/json'});
+      }
+    }
+    Map<String, dynamic> formDataMAp = {
+      'file':
+          MultipartFile.fromFileSync(file['data'].path, filename: file['name'])
+    };
+
+    formDataMAp.addAll(data);
+    final formData = FormData.fromMap(formDataMAp);
+
+    try {
+      final response = await dio.post('/api/$function',
+          queryParameters: params, data: formData);
+
+      if (response.data['errors'] != null) {
+        throw response.data['errors'];
+      }
+      return response.data;
+    } on DioException catch (e) {
+      throw _handleErrors(e);
     } catch (e) {
       rethrow;
     }

@@ -8,7 +8,6 @@ import 'package:smart_shop_client_app/constants/fake.data.dart';
 import 'package:smart_shop_client_app/core/helpers/colors.helper.dart';
 import 'package:smart_shop_client_app/core/helpers/list_widget.helper.dart';
 import 'package:smart_shop_client_app/core/helpers/text_style.helper.dart';
-import 'package:smart_shop_client_app/core/widgets/base_view.component.dart';
 import 'package:smart_shop_client_app/features/home/components/custom_tag.component.dart';
 import 'package:smart_shop_client_app/features/home/components/progress_indicator.component.dart';
 import 'package:smart_shop_client_app/features/loyalty/components/point_ledger_history_element.component.dart';
@@ -21,8 +20,7 @@ class Loyalty extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BaseView(
-      body: col([
+    return col([
         row([
           cTitleMedium(
             context,
@@ -94,9 +92,8 @@ class Loyalty extends StatelessWidget {
                   ),
                 )
                 .toList(),
-          ).scrollVertical(),
-        ).h(220),
-      ], calign: CrossAxisAlignment.start),
-    ).paddingSymmetric(horizontal: 16);
+          ),
+        ),
+      ], calign: CrossAxisAlignment.start).paddingSymmetric(horizontal: 16).scrollVertical();
   }
 }

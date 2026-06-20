@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:smart_shop_client_app/core/helpers/colors.helper.dart';
 
 class BaseView extends StatelessWidget {
@@ -10,7 +9,6 @@ class BaseView extends StatelessWidget {
       this.appBarEnd,
       required this.body,
       this.top = const [],
-      this.transparent = true,
       this.extended = true,
       this.drawer,
       this.appBarTitle,
@@ -24,7 +22,6 @@ class BaseView extends StatelessWidget {
   final Widget? appBarTitle;
   final List<Widget> top;
   final Widget? drawer;
-  final bool transparent;
   final bool extended;
   final Color? backgroundColor;
   final Widget? bottom;
@@ -34,19 +31,9 @@ class BaseView extends StatelessWidget {
     return Scaffold(
       key: gkey,
       endDrawer: drawer,
-      appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(75),
-          child: AppBar(
-            automaticallyImplyLeading: false,
-            clipBehavior: Clip.none,
-            leading: appBarLeading,
-            title: appBarTitle,
-            actions: appBarEnd,
-          ).paddingSymmetric(horizontal: 25, vertical: 18)),
-      extendBodyBehindAppBar: extended,
+      extendBodyBehindAppBar: false,
       backgroundColor: backgroundColor ?? colorScheme(context).surface,
-      body: body,
-      extendBody: true,
+      body: SafeArea(child: body),
       bottomNavigationBar: bottom,
     );
   }

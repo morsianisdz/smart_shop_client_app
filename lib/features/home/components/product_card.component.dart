@@ -26,7 +26,7 @@ class ProductCard extends StatelessWidget {
           ).paddingSymmetric(vertical: 8),
           product.name.text
               .textStyle(
-                Theme.of(context).textTheme.titleMedium!.copyWith(
+                Theme.of(context).textTheme.titleSmall!.copyWith(
                   color: colorScheme(context).onSurface,
                 ),
               ).overflow(TextOverflow.ellipsis)

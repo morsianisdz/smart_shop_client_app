@@ -38,7 +38,7 @@ class RewardCard extends StatelessWidget {
           cTitleSmall(
             context,
             AppText.xpts.trArgs([reward.points.toString()]),
-            color: colorScheme(context).onSurface,
+            color: ColorsConf.textWhite,
             fontWeight: FontWeight.bold,
           ),
         ).h(36),

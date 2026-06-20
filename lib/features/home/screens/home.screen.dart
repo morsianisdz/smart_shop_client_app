@@ -8,14 +8,13 @@ import 'package:smart_shop_client_app/constants/fake.data.dart';
 import 'package:smart_shop_client_app/core/helpers/colors.helper.dart';
 import 'package:smart_shop_client_app/core/helpers/list_widget.helper.dart';
 import 'package:smart_shop_client_app/core/helpers/text_style.helper.dart';
-import 'package:smart_shop_client_app/core/widgets/base_view.component.dart';
 import 'package:smart_shop_client_app/core/widgets/button.component.dart';
 import 'package:smart_shop_client_app/core/widgets/input_field.components.dart';
+import 'package:smart_shop_client_app/features/home/components/active_shopping_limit.component.dart';
 import 'package:smart_shop_client_app/features/home/components/custom_tag.component.dart';
 import 'package:smart_shop_client_app/features/home/components/home_header.component.dart';
 import 'package:smart_shop_client_app/features/home/components/product_wrap_layout.component.dart';
 import 'package:smart_shop_client_app/features/home/components/progress_indicator.component.dart';
-import 'package:smart_shop_client_app/shared/helpers/price_builder.helper.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class Home extends StatelessWidget {
@@ -23,8 +22,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BaseView(
-      body: col([
+    return col([
         HomeHeader().paddingOnly(top: 48, bottom: 18),
         CInputField(
           controller: TextEditingController(),
@@ -44,10 +42,11 @@ class Home extends StatelessWidget {
                 .paddingOnly(bottom: 8),
             row([
                   cTitleLarge(context, "150").paddingOnly(right: 4),
-                  cTitleMedium(
+                  cTitleSmall(
                     context,
                     AppText.xpoints.tr.toUpperCase(),
                     color: colorScheme(context).secondary,
+                    fontWeight: FontWeight.bold
                   ),
                 ], calign: CrossAxisAlignment.end)
                 .paddingOnly(bottom: 16),
@@ -70,57 +69,14 @@ class Home extends StatelessWidget {
             ], align: MainAxisAlignment.spaceBetween),
           ], calign: CrossAxisAlignment.start).paddingAll(16),
         ).paddingOnly(bottom: 16),
-        Card(
-          child: col([
-            row([
-                  cTitleSmall(
-                    context,
-                    AppText.activeShoppingLimit.tr.toUpperCase(),
-                    fontFamily: ThemeConf.secondaryFontFamily,
-                  ),
-                  cBodyMedium(
-                    context,
-                    AppText.xused.trArgs(["30"]),
-                    color: colorScheme(context).primary,
-                  ),
-                ], align: MainAxisAlignment.spaceBetween)
-                .paddingOnly(bottom: 8),
-            row([
-                  cTitleLarge(
-                    context,
-                    priceBuilder("15.00"),
-                  ).paddingOnly(right: 4),
-                  cBodyMedium(
-                    context,
-                    AppText.amountLimit.trArgs([priceBuilder("50.00")]),
-                  ),
-                ], calign: CrossAxisAlignment.end)
-                .paddingOnly(bottom: 16),
-            CProgressIndicator(
-              value: 0.2,
-              color: colorScheme(context).primary,
-            ).paddingOnly(bottom: 8),
-
-            row([
-              cBodyMedium(
-                context,
-                AppText.xRemaining.trArgs([priceBuilder("35.88")]),
-                fontFamily: ThemeConf.secondaryFontFamily,
-              ),
-              cBodyMedium(
-                context,
-                AppText.adjustLimit.tr,
-                fontFamily: ThemeConf.secondaryFontFamily,
-              ),
-            ], align: MainAxisAlignment.spaceBetween),
-          ], calign: CrossAxisAlignment.start).paddingAll(16),
-        ).paddingOnly(bottom: 18),
+        ActiveShoppingLimit().paddingOnly(bottom: 18),
         CButton.withIcon(
           () {},
-          cTitleMedium(
+          cTitleSmall(
             context,
             AppText.startInStoreScanning.tr.toUpperCase(),
             color: ColorsConf.textWhite,
+            fontWeight: FontWeight.bold
           ),
           icon: FaIcon(
             FontAwesomeIcons.barcode,
@@ -143,7 +99,6 @@ class Home extends StatelessWidget {
             ], align: MainAxisAlignment.spaceBetween)
             .paddingOnly(bottom: 12),
             ProductWrapLayout(products: FakeData.products)
-      ]).paddingSymmetric(horizontal: 16),
-    );
+      ]).paddingSymmetric(horizontal: 16).scrollVertical();
   }
 }

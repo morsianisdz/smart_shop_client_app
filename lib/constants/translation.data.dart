@@ -114,7 +114,22 @@ class LocaleTranslation extends Translations {
       "accumulate_points_automatically": "Accumulate points automatically with every checkout scan and claim vouchers to unlock deep savings on your next retail purchases.",
       "skip": "skip",
       "next_step": "Next Step",
-      "get_started": "Get Started"
+      "get_started": "Get Started",
+      "register": "register",
+      "please_fill_all_fields": "Please Fill All Fields",
+      "email_is_not_valide": "Email is not valide",
+       "confirm_password": "Confirm Password",
+      "password_required": "Password Required",
+      "password_too_short": "Password Too Short",
+      "invalid_passwoed": "Invalid Passwoed",
+      "invalid_password": "Invalid Password",
+      "passwords_do_not_match": "Passwords Do Not Match",
+      "field_required": "Field Required",
+      "apple": "Apple",
+      "notifications": "Notifications",
+      "mark_all_read": "Mark all read",
+      "my_digital_cart": "My Digital Cart",
+      "x_item": "%s Item"
     },
     "ar": {
       "introduction": "مقدمة",

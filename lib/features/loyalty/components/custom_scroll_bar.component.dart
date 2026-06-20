@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:smart_shop_client_app/core/helpers/colors.helper.dart';
 import 'package:smart_shop_client_app/core/helpers/spacing.helper.dart';
 
 class CustomScrollBar extends StatelessWidget {
@@ -19,7 +20,7 @@ class CustomScrollBar extends StatelessWidget {
       width: totalBarWidth,
       height: 8,
       decoration: BoxDecoration(
-        color: const Color(0xFF101725),
+        color: colorScheme(context).primaryContainer,
         borderRadius: BorderRadius.circular(4),
       ),
       alignment: Alignment.centerLeft,
@@ -28,7 +29,7 @@ class CustomScrollBar extends StatelessWidget {
         width: thumbWidth,
         height: double.infinity,
         decoration: BoxDecoration(
-          color: const Color(0xFF222D42),
+          color: colorScheme(context).onSecondaryContainer,
           borderRadius: BorderRadius.circular(4),
         ),
       ),

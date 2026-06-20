@@ -204,4 +204,16 @@ class AppText {
   static const String skip = "skip";
   static const String getStarted = "get_started";
   static const String nextStep = "next_step";
+  static const String register = "register";
+  static const String pleaseFillAllFields = "please_fill_all_fields";
+  static const String emailIsNotValide = "email_is_not_valide";
+  static const String passwordRequired = "password_required";
+  static const String passwordTooShort = "password_too_short";
+  static const String invalidPasswoed = "invalid_passwoed";
+  static const String invalidPassword = "invalid_password";
+  static const String passwordsDoNotMatch = "passwords_do_not_match";
+  static const String apple = "apple";
+  static const String markAllRead = "mark_all_read";  static const String myDigitalCart = "my_digital_cart";  static const String xItem = "x_item";
+
+
 }
