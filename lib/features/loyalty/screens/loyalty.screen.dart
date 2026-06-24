@@ -13,6 +13,7 @@ import 'package:smart_shop_client_app/features/home/components/progress_indicato
 import 'package:smart_shop_client_app/features/loyalty/components/point_ledger_history_element.component.dart';
 import 'package:smart_shop_client_app/features/loyalty/components/rewards_carrosel_section.component.dart';
 import 'package:smart_shop_client_app/features/profile/components/menu_element.component.dart';
+import 'package:smart_shop_client_app/shared/components/screen_header.component.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class Loyalty extends StatelessWidget {
@@ -20,22 +21,13 @@ class Loyalty extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return col([
-        row([
-          cTitleMedium(
-            context,
-            AppText.loyaltyRewardsHub.tr,
-            color: colorScheme(context).onSurface,
-          ),
-          FaIcon(
+    return col(
+      [
+        ScreenHeader(title: AppText.loyaltyRewardsHub.tr, leading: FaIcon(
             FontAwesomeIcons.circleInfo,
             size: 16,
             color: colorScheme(context).onPrimaryContainer,
-          ),
-        ], align: MainAxisAlignment.spaceBetween).paddingOnly(
-          top: 48,
-          bottom: 16,
-        ),
+          )).paddingOnly(bottom: 16),
         Card(
           child: col([
             row([
@@ -88,12 +80,16 @@ class Loyalty extends StatelessWidget {
             FakeData.mockLedgerHistory
                 .mapIndexed(
                   (mockLedgerEelement, index) => PointLedgerHistoryEelement(
-                    pointLedger: mockLedgerEelement, isLastEelement: (FakeData.mockLedgerHistory.length - index - 1) == 0,
+                    pointLedger: mockLedgerEelement,
+                    isLastEelement:
+                        (FakeData.mockLedgerHistory.length - index - 1) == 0,
                   ),
                 )
                 .toList(),
           ),
         ),
-      ], calign: CrossAxisAlignment.start).paddingSymmetric(horizontal: 16).scrollVertical();
+      ],
+      calign: CrossAxisAlignment.start,
+    ).paddingSymmetric(horizontal: 16).scrollVertical();
   }
 }

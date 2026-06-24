@@ -15,6 +15,7 @@ import 'package:smart_shop_client_app/features/main/screens/main.screen.dart';
 import 'package:smart_shop_client_app/features/notifications/providers/notification.provider.dart';
 import 'package:smart_shop_client_app/features/onboarding/providers/onboarding.provider.dart';
 import 'package:smart_shop_client_app/features/scan/providers/shopping.provider.dart';
+import 'package:smart_shop_client_app/shared/providers/cart.provider.dart';
 import 'package:smart_shop_client_app/shared/providers/market.provider.dart';
 
 final getIt = GetIt.instance;
@@ -37,7 +38,8 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(create: (_) => ShoppingProvider()),
           ChangeNotifierProvider(create: (_) => OnboardingProvider()),
           ChangeNotifierProvider(create: (_) => AuthProvider()),
-          ChangeNotifierProvider(create: (_) => NotificationProvider())
+          ChangeNotifierProvider(create: (_) => NotificationProvider()),
+          ChangeNotifierProvider(create: (_) => CartProvider()),
         ],
         child: GetMaterialApp(
           title: AppText.appTitle,

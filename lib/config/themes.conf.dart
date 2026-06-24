@@ -83,6 +83,7 @@ class ThemeConf {
   static ElevatedButtonThemeData elevatedButtonThemeData =
       ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
+          elevation: 0,
           backgroundColor: ColorsConf.orange,
           minimumSize: Size.fromHeight(UiConf.elevatedButtonHeight),
           shape: RoundedRectangleBorder(
@@ -152,5 +153,5 @@ class ThemeConf {
     iconButtonTheme: iconButtonThemeBuilder(darkColorS)
   );
 
-  static ThemeData currentTheme = dark;
+  static ThemeData currentTheme = light;
 }

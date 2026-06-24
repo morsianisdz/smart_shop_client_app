@@ -95,7 +95,7 @@ class LocaleTranslation extends Translations {
       "account_settings": "Account settings",
       "shopping_controls": "Shopping Controls",
       "monthly_spending_limit": "Monthly Spending Limit",
-      "current_cap_x": "Current Cap: %S",
+      "current_cap_x": "Current Cap: %s",
       "adjust": "Adjust",
       "preferences_data": "Preferences & Data",
       "purchase_history": "Purchase History",
@@ -129,7 +129,9 @@ class LocaleTranslation extends Translations {
       "notifications": "Notifications",
       "mark_all_read": "Mark all read",
       "my_digital_cart": "My Digital Cart",
-      "x_item": "%s Item"
+      "x_item": "%s Item",
+      "cart_has_not_beeing_saved": "Cart Has Not Beeing Saved",
+      "unit": "Unit: "
     },
     "ar": {
       "introduction": "مقدمة",

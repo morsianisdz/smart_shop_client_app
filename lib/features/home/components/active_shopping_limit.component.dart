@@ -32,11 +32,11 @@ class ActiveShoppingLimit extends StatelessWidget {
             row([
                   cTitleLarge(
                     context,
-                    priceBuilder("15.00"),
+                    priceBuilder(15),
                   ).paddingOnly(right: 4),
                   cBodyMedium(
                     context,
-                    AppText.amountLimit.trArgs([priceBuilder("50.00")]),
+                    AppText.amountLimit.trArgs([priceBuilder(50)]),
                   ),
                 ], calign: CrossAxisAlignment.end)
                 .paddingOnly(bottom: 16),
@@ -48,7 +48,7 @@ class ActiveShoppingLimit extends StatelessWidget {
             row([
               cBodyMedium(
                 context,
-                AppText.xRemaining.trArgs([priceBuilder("35.88")]),
+                AppText.xRemaining.trArgs([priceBuilder(35.88)]),
                 fontFamily: ThemeConf.secondaryFontFamily,
               ),
               cBodyMedium(

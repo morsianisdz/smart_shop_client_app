@@ -37,11 +37,11 @@ class ProductCard extends StatelessWidget {
           row([
             cTitleSmall(
               context,
-              priceBuilder(product.price.toString()),
+              priceBuilder(product.price),
               color: colorScheme(context).primary,
             ),
             if (product.oldPrice != null) ...[
-              priceBuilder(product.oldPrice.toString()).text
+              priceBuilder(product.oldPrice!).text
                   .textStyle(
                     TextStyle(
                       decoration: TextDecoration.lineThrough,

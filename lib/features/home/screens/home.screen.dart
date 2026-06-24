@@ -23,7 +23,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return col([
-        HomeHeader().paddingOnly(top: 48, bottom: 18),
+        HomeHeader().paddingOnly(bottom: 18),
         CInputField(
           controller: TextEditingController(),
           prefixIcon: Icon(Icons.search),

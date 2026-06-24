@@ -41,19 +41,19 @@ class FakeData {
   static List<Reward> rewards = [
     Reward(
       id: 1,
-      discount: '5',
+      discount: 5,
       description: 'Bakery & Deli Items',
       points: 150,
     ),
     Reward(
       id: 2,
-      discount: '15',
+      discount: 15,
       description: 'Fresh Meat Produce',
       points: 300,
     ),
     Reward(
       id: 3,
-      discount: '20',
+      discount: 20,
       description: 'Dairy & Frozen Goods',
       points: 400,
     ),

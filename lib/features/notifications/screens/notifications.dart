@@ -19,7 +19,7 @@ class NotificationsScreen extends StatelessWidget {
         .read<NotificationProvider>();
     return BaseView(
       body: col([
-        ScreenHeader(title: AppText.markAllRead.tr, leading: cTitleSmall(
+        ScreenHeader(title: AppText.markAllRead.tr, withBack: true, leading: cTitleSmall(
             context,
             AppText.markAllRead.tr,
             color: colorScheme(context).primary,

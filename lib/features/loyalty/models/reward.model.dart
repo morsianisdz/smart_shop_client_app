@@ -1,6 +1,6 @@
 class Reward {
   final int id;
-  final String discount;
+  final double discount;
   final String description;
   final int points;
 

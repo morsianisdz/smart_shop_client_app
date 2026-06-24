@@ -213,7 +213,9 @@ class AppText {
   static const String invalidPassword = "invalid_password";
   static const String passwordsDoNotMatch = "passwords_do_not_match";
   static const String apple = "apple";
-  static const String markAllRead = "mark_all_read";  static const String myDigitalCart = "my_digital_cart";  static const String xItem = "x_item";
-
-
+  static const String markAllRead = "mark_all_read";
+  static const String myDigitalCart = "my_digital_cart";
+  static const String xItem = "x_item";
+  static const String cartHasNotBeeingSaved = "cart_has_not_beeing_saved";
+  static const String unit = "unit";
 }

@@ -45,7 +45,7 @@ class ScannedProductBottomModalSheet extends StatelessWidget {
           col([
             cTitleLarge(
               context,
-              priceBuilder(product.price.toString()),
+              priceBuilder(product.price),
               color: colorScheme(context).primary,
             ).paddingOnly(bottom: 8),
             cBodyMedium(context, AppText.inAisleX.trArgs(["4B"])),
@@ -84,7 +84,7 @@ class ScannedProductBottomModalSheet extends StatelessWidget {
               cTitleSmall(context, AppText.expectedSubTotal.tr),
               cTitleMedium(
                 context,
-                priceBuilder(product.price.toString()),
+                priceBuilder(product.price),
                 color: colorScheme(context).onSurface,
               ),
             ]

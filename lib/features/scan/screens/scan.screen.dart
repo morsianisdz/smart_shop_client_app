@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get_utils/src/extensions/export.dart';
-import 'package:get_it/get_it.dart';
 import 'package:smart_shop_client_app/constants/app_text.data.dart';
 import 'package:smart_shop_client_app/core/helpers/colors.helper.dart';
 import 'package:smart_shop_client_app/core/helpers/list_widget.helper.dart';
 import 'package:smart_shop_client_app/core/helpers/text_style.helper.dart';
-import 'package:smart_shop_client_app/core/widgets/base_view.component.dart';
 import 'package:smart_shop_client_app/core/widgets/button.component.dart';
 import 'package:smart_shop_client_app/features/scan/components/scan_header.component.dart';
 import 'package:smart_shop_client_app/features/scan/components/scanner_frame.component.dart';
@@ -18,8 +16,7 @@ class Scan extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BaseView(
-      body: [
+    return [
         /* MobileScanner(
           onDetect: (result) {
             print(result.barcodes.first.rawValue);
@@ -36,9 +33,8 @@ class Scan extends StatelessWidget {
             cTitleSmall(context, AppText.alignBarcode.tr.toUpperCase()),
           ], align: MainAxisAlignment.center).centered(),
         ).w(300).h(300).centered(),
-        ScanHeader().paddingOnly(top: 48),
-        CButton.textOnly(() => GetIt.instance<ShoppingProvider>().onDetectBarcode(context), cTitleMedium(context, "scan simulation", color: colorScheme(context).onSurface)).w(200).centered()
-      ].stack(),
-    );
+        ScanHeader(),
+        CButton.textOnly(() => ShoppingProvider().onDetectBarcode(context), cTitleMedium(context, "scan simulation", color: colorScheme(context).onSurface)).w(200).centered()
+      ].stack();
   }
 }
