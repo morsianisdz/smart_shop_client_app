@@ -217,5 +217,5 @@ class AppText {
   static const String myDigitalCart = "my_digital_cart";
   static const String xItem = "x_item";
   static const String cartHasNotBeeingSaved = "cart_has_not_beeing_saved";
-  static const String unit = "unit";
+  static const String unitx = "unitx";
 }
