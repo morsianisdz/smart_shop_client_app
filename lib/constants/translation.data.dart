@@ -131,7 +131,8 @@ class LocaleTranslation extends Translations {
       "my_digital_cart": "My Digital Cart",
       "x_item": "%s Item",
       "cart_has_not_beeing_saved": "Cart Has Not Beeing Saved",
-      "unitx": "Unit: %s"
+      "unitx": "Unit: %s",
+      "xclipped": "%s Clipped"
     },
     "ar": {
       "introduction": "مقدمة",

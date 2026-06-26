@@ -6,6 +6,7 @@ import 'package:smart_shop_client_app/features/loyalty/models/point_ledger_histo
 import 'package:smart_shop_client_app/features/loyalty/models/reward.model.dart';
 import 'package:smart_shop_client_app/features/notifications/enums/notification_type.enum.dart';
 import 'package:smart_shop_client_app/features/notifications/models/notifications_item.model.dart';
+import 'package:smart_shop_client_app/features/offers/models/coupon_off.model.dart';
 import 'package:smart_shop_client_app/shared/models/product.model.dart';
 import 'package:smart_shop_client_app/shared/models/user.model.dart';
 
@@ -144,6 +145,36 @@ class FakeData {
       icon: FontAwesomeIcons.receipt,
       isUnread: false,
       type: NotificationType.success
+    ),
+  ];
+
+  static List<CouponOfferModel> offers = [
+    CouponOfferModel(
+      id: 1,
+      title: "Organic Milk 1G",
+      description: "Save on whole, skimmed, and low-fat dairy variants.",
+      discountTag: "20% OFF",
+      expirationText: "Expires in 5 days",
+      product: products[0],
+      isClipped: false,
+    ),
+    CouponOfferModel(
+      id: 2,
+      title: "Fresh Apples 5lb",
+      description: "Buy 1 Bag of Honeycrisp or Granny Smith apples, get 1 Free.",
+      discountTag: "BOGO",
+      expirationText: "Expires tomorrow",
+      product: products[1],
+      isClipped: false,
+    ),
+    CouponOfferModel(
+      id: 3,
+      title: "Premium Coffee Beans",
+      description: "Deduct on robust dark-roast or vanilla Arabica beans.",
+      discountTag: "\$2.50 OFF",
+      expirationText: "Expires in 6 days",
+      product: products[1],
+      isClipped: false,
     ),
   ];
 }

@@ -218,4 +218,5 @@ class AppText {
   static const String xItem = "x_item";
   static const String cartHasNotBeeingSaved = "cart_has_not_beeing_saved";
   static const String unitx = "unitx";
+  static const String xclipped = "xclipped";
 }

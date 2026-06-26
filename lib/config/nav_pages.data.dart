@@ -31,7 +31,7 @@ class NavPagesData {
     {
       "index": 3,
       "title": AppText.offers,
-      "widget": const Offers(),
+      "widget": const WeeklyOffersView(),
       "icon": FontAwesomeIcons.receipt,
     },
     {
