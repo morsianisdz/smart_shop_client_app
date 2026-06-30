@@ -132,7 +132,9 @@ class LocaleTranslation extends Translations {
       "x_item": "%s Item",
       "cart_has_not_beeing_saved": "Cart Has Not Beeing Saved",
       "unitx": "Unit: %s",
-      "xclipped": "%s Clipped"
+      "xclipped": "%s Clipped",
+      "clipped": "Clipped",
+      "clipp_offer": "Clipp offer"
     },
     "ar": {
       "introduction": "مقدمة",

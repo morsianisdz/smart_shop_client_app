@@ -165,7 +165,7 @@ class FakeData {
       discountTag: "BOGO",
       expirationText: "Expires tomorrow",
       product: products[1],
-      isClipped: false,
+      isClipped: true,
     ),
     CouponOfferModel(
       id: 3,

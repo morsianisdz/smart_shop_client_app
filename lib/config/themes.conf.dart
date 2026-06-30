@@ -153,5 +153,5 @@ class ThemeConf {
     iconButtonTheme: iconButtonThemeBuilder(darkColorS)
   );
 
-  static ThemeData currentTheme = light;
+  static ThemeData currentTheme = dark;
 }
