@@ -41,61 +41,49 @@ class CartItem extends StatelessWidget {
                 color: colorScheme(context).primary,
                 fontWeight: FontWeight.bold,
               ),
-
-            const SizedBox(height: 14.0),
+            const Spacer(),
             row([
-              cTitleSmall(context, AppText.unitx.trArgs([priceBuilder(product.price)])),
+              cTitleSmall(
+                context,
+                AppText.unitx.trArgs([priceBuilder(product.price)]),
+              ),
               if (product.oldPrice != null)
-              priceBuilder(product.oldPrice!).text
-                  .textStyle(
-                    TextStyle(
-                      decoration: TextDecoration.lineThrough,
-                      color: colorScheme(context).onPrimaryContainer,
-                    ),
-                  )
-                  .make()
+                priceBuilder(product.oldPrice!).text
+                    .textStyle(
+                      TextStyle(
+                        decoration: TextDecoration.lineThrough,
+                        color: colorScheme(context).onPrimaryContainer,
+                      ),
+                    )
+                    .make(),
             ]).paddingOnly(top: 14),
           ],
           calign: CrossAxisAlignment.start,
           size: MainAxisSize.min,
         ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            cTitleMedium(context, priceBuilder(product.price)),paddingOnly(bottom: 24),
-            /* Row(
-              children: [
-                // Minus Button
-                _buildQuantityButton(
-                  icon: FontAwesomeIcons.minus,
-                  onPressed: () {},
-                ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 12.0),
-                  child: Text(
-                    '1',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                // Plus Button
-                _buildQuantityButton(
-                  icon: FontAwesomeIcons.plus,
-                  onPressed: () {},
-                ),
-              ],
-            ), */
+        const Spacer(),
+        col(
+          [
+            cTitleSmall(context, priceBuilder(product.price)),
+            const Spacer(),
+            row([
+              _buildQuantityButton(
+                icon: FontAwesomeIcons.minus,
+                onPressed: () {},
+              ),
+              cTitleMedium(context, product.qty.toString()).paddingSymmetric(horizontal: 12),
+              _buildQuantityButton(
+                icon: FontAwesomeIcons.plus,
+                onPressed: () {},
+              ),
+            ]),
           ],
+          calign: CrossAxisAlignment.end,
         ),
-      ], calign: CrossAxisAlignment.center).p16(),
-    );
+      ], calign: CrossAxisAlignment.start).p16(),
+    ).h(140);
   }
 
-  // Extracted custom rounded square button helper method
   Widget _buildQuantityButton({
     required FaIconData icon,
     required VoidCallback onPressed,

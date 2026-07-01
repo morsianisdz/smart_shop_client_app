@@ -26,7 +26,7 @@ class CartScreen extends StatelessWidget {
             text: AppText.xItem.trArgs(["4"]).toUpperCase(),
             color: colorScheme(context).onPrimaryContainer,
           ),
-        ).paddingOnly(bottom: 24),
+        ).paddingOnly(bottom: 24), 
         ActiveShoppingLimit().paddingOnly(bottom: 18),
         ListView.builder(
           shrinkWrap: true,
