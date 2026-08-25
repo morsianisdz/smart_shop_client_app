@@ -8,7 +8,6 @@ import 'package:smart_shop_client_app/features/notifications/enums/notification_
 import 'package:smart_shop_client_app/features/notifications/models/notifications_item.model.dart';
 import 'package:smart_shop_client_app/features/offers/models/coupon_off.model.dart';
 import 'package:smart_shop_client_app/shared/models/product.model.dart';
-import 'package:smart_shop_client_app/shared/models/user.model.dart';
 
 class FakeData {
   static List<Product> products = [
@@ -77,17 +76,6 @@ class FakeData {
     ),
   ];
 
-  static User user = User(
-    id: 1,
-    username: "MorsiAnisDZ",
-    phoneNumber: "+213660311490",
-    email: "tadjeddineanismorsi@gmail.com",
-    token: "jhkzerjzerjkzrkhuzherjkzer6465468zeerkzerjzer4564z46zer",
-    image: CImage(
-      url:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC8kiSH5ZSAcVoj3tAQQDoP_ux0sSricMyUg&s",
-    ),
-  );
 
   static List<PointLedger> mockLedgerHistory = [
     PointLedger(

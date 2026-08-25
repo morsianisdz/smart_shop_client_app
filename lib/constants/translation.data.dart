@@ -134,7 +134,15 @@ class LocaleTranslation extends Translations {
       "unitx": "Unit: %s",
       "xclipped": "%s Clipped",
       "clipped": "Clipped",
-      "clipp_offer": "Clipp offer"
+      "clipp_offer": "Clipp offer",
+      "unvalidusername": "Unvalid Username",
+      "registration_success": "Registration Success",
+      "silver_tier": "Silver Tier",
+      "gold_tier": "Gold Tier",
+      "simple_tier": "Simple Tier",
+      "diamond_tier": "Diamond Tier",
+      "unlimited": "Unlimited",
+      "set_a_limit": "Set A Limit"
     },
     "ar": {
       "introduction": "مقدمة",

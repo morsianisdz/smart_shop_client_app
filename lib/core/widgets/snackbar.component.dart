@@ -10,6 +10,7 @@ class CSnackBar {
 
   static failed(String message) {
     Get.snackbar(
+      duration: Duration(seconds: 10),
       AppText.error,
       message,
       backgroundColor: UiConf.failedColor,

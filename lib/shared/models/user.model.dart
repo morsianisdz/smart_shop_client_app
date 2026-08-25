@@ -7,10 +7,13 @@ class User {
     this.lastName,
     required this.email,
     required this.image,
-    required this.token,
+    this.token,
     this.jointDate,
-    required this.phoneNumber,
+    this.phoneNumber,
+    required this.memberStatus,
     required this.username,
+    required this.activeShoppingLimit,
+    required this.points,
   });
 
   final int id;
@@ -19,9 +22,12 @@ class User {
   final String username;
   final String email;
   final CImage image;
-  final String token;
+  final String? token;
   final DateTime? jointDate;
   final String? phoneNumber;
+  final int points;
+  final int memberStatus;
+  final double activeShoppingLimit;
 
   factory User.fromJson(dynamic json) {
     return User(
@@ -32,8 +38,11 @@ class User {
       email: json['email'],
       image: CImage(url: json['image_url'], hash: json['image_hash']),
       token: json['token'],
-      phoneNumber: json['phoneNumber'],
-      jointDate: DateTime.parse(json['create_at']),
+      points: json['points'],
+      phoneNumber: json['phone_number'],
+      memberStatus: json['member_status'],
+      activeShoppingLimit: json['active_shopping_limit'].toDouble(),
+      jointDate: DateTime.parse(json['created_at']),
     );
   }
 

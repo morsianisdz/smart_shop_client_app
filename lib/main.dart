@@ -18,6 +18,7 @@ import 'package:smart_shop_client_app/features/onboarding/providers/onboarding.p
 import 'package:smart_shop_client_app/features/scan/providers/shopping.provider.dart';
 import 'package:smart_shop_client_app/shared/providers/cart.provider.dart';
 import 'package:smart_shop_client_app/shared/providers/market.provider.dart';
+import 'package:smart_shop_client_app/shared/providers/user.provider.dart';
 
 final getIt = GetIt.instance;
 
@@ -64,4 +65,6 @@ void setupLocator() {
   getIt.registerLazySingleton<MainProvider>(() => MainProvider());
   getIt.registerLazySingleton<AuthProvider>(() => AuthProvider());
   getIt.registerLazySingleton<OnboardingProvider>(() => OnboardingProvider());
+  getIt.registerLazySingleton<UserProvider>(() => UserProvider());
+  getIt.registerLazySingleton<CartProvider>(() => CartProvider());
 }

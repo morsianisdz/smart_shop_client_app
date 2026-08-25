@@ -31,7 +31,7 @@ class LogoWidget extends StatelessWidget {
           AppText.appNamePart2.tr.textSpan
               .textStyle(
                 Theme.of(context).textTheme.titleLarge!.copyWith(
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
               )
               .make(),

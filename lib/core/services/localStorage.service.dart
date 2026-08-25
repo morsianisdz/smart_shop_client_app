@@ -6,7 +6,7 @@ class LocalStorageService {
   static const storage = FlutterSecureStorage();
 
   Future<void> secureSave(key, value) async {
-    await storage.write(key: key, value: value.toString());
+    await storage.write(key: key, value: value);
   }
 
   Future<String?> secureRead(key) async {

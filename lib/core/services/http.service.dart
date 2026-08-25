@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:dio/dio.dart';
 import 'package:get/get.dart' as navigate;
 import 'package:smart_shop_client_app/config/http.conf.dart';
+import 'package:smart_shop_client_app/constants/local_storage_keys.dart';
 import 'package:smart_shop_client_app/core/models/http_request.model.dart';
 import 'package:smart_shop_client_app/core/services/localStorage.service.dart';
 import 'package:smart_shop_client_app/features/auth/screens/login.screen.dart';
@@ -46,21 +47,28 @@ class HttpService {
       HttpRequestModel httpRequestConf = HttpConf.marketHost}) async {
     _configureDio(httpRequestConf);
     if (withbearer) {
-      String? token = await LocalStorageService().shpReadString('token');
+      String? token = await LocalStorageService().shpReadString(LS.jwt);
+
+      //token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzg3NjU1NTk5LCJleHAiOjE3ODc2NTkxOTksIm5iZiI6MTc4NzY1NTU5OSwianRpIjoiWUd4dGtrbWNTRWRpbFFYaCIsInN1YiI6IjciLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.5lPD5ghG6UqSYNIuCBlz-XQf9MZW94nGzCY-sBNpmAk";
       if (token != null) {
         dio.options.headers.addAll({'Authorization': 'Bearer $token'});
       }
     }
-
+    
     try {
       final response = await dio.get('/api/$function', queryParameters: params);
 
-      if (response.data is! List && response.data['errors'] != null) {
+      if ((response.data is List) && response.data['errors'] != null) {
         throw response.data['errors'];
       }
 
       return response.data;
     } on DioException catch (e) {
+      print(dio.options.baseUrl);
+      print('STATUS: ${e.response?.statusCode}');
+      print('DATA: ${e.response?.data}');
+      print('HEADERS: ${e.response?.headers}');
+      print('MESSAGE: ${e.message}');
       throw _handleErrors(e);
     } catch (e) {
       rethrow;
@@ -74,23 +82,29 @@ class HttpService {
     _configureDio(httpRequestConf);
 
     if (withbearer) {
-      String? token = await LocalStorageService().shpReadString('token');
+      String? token = await LocalStorageService().shpReadString(LS.jwt);
       if (token != null) {
         dio.options.headers.addAll({'Authorization': 'Bearer $token'});
       }
     }
-
+    
     try {
       final response =
           await dio.post('/api/$function', queryParameters: params, data: data);
 
-      if (response.data['errors'] != null) {
+      if ((response.data is List) && response.data['errors'] != null) {
         throw response.data['errors'];
       }
       return response.data;
     } on DioException catch (e) {
+      print(dio.options.baseUrl);
+      print('STATUS: ${e.response?.statusCode}');
+      print('DATA: ${e.response?.data}');
+      print('HEADERS: ${e.response?.headers}');
+      print('MESSAGE: ${e.message}');
       throw _handleErrors(e);
     } catch (e) {
+      print(e);
       rethrow;
     }
   }
@@ -105,7 +119,7 @@ class HttpService {
       'Content-Type': 'multipart/form-data',
     };
     if (withbearer) {
-      String? token = await LocalStorageService().shpReadString('token');
+      String? token = await LocalStorageService().shpReadString(LS.jwt);
       if (token != null) {
         dio.options.headers.addAll(
             {'Authorization': 'Bearer $token', 'Accept': 'application/json'});
@@ -133,4 +147,8 @@ class HttpService {
       rethrow;
     }
   }
+
+  /* Uri _getUri(HttpRequestModel marketHost) {
+    return Uri(scheme: marketHost.scheme, host: marketHost.scheme, port: marketHost.port);
+  } */
 }

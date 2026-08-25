@@ -4,17 +4,16 @@ import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
 import 'package:smart_shop_client_app/config/themes.conf.dart';
 import 'package:smart_shop_client_app/constants/app_text.data.dart';
-import 'package:smart_shop_client_app/constants/fake.data.dart';
 import 'package:smart_shop_client_app/core/helpers/colors.helper.dart';
 import 'package:smart_shop_client_app/core/helpers/list_widget.helper.dart';
 import 'package:smart_shop_client_app/core/helpers/text_style.helper.dart';
 import 'package:smart_shop_client_app/core/widgets/button.component.dart';
-import 'package:smart_shop_client_app/features/auth/providers/auth.provider.dart';
 import 'package:smart_shop_client_app/features/home/components/custom_tag.component.dart';
 import 'package:smart_shop_client_app/features/home/components/user_avatar.component.dart';
 import 'package:smart_shop_client_app/features/profile/components/menu_element.component.dart';
 import 'package:smart_shop_client_app/shared/components/screen_header.component.dart';
 import 'package:smart_shop_client_app/shared/helpers/price_builder.helper.dart';
+import 'package:smart_shop_client_app/shared/providers/user.provider.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class Profile extends StatelessWidget {
@@ -22,7 +21,6 @@ class Profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    GetIt.instance<AuthProvider>().user = FakeData.user;
     final Widget devider = Divider(
       color: colorScheme(context).onSecondaryContainer,
       thickness: 0.5,
@@ -40,12 +38,12 @@ class Profile extends StatelessWidget {
           col([
             cTitleSmall(
               context,
-              GetIt.instance<AuthProvider>().user!.username,
+              GetIt.instance<UserProvider>().user!.username,
               color: colorScheme(context).onSurface,
             ).paddingOnly(bottom: 4),
             cBodyMedium(
               context,
-              GetIt.instance<AuthProvider>().user!.email,
+              GetIt.instance<UserProvider>().user!.email,
             ).paddingOnly(bottom: 8),
             CTag(
               text: AppText.bronzeTier.tr.toUpperCase(),

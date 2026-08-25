@@ -26,12 +26,13 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Color iconsColor = colorScheme(context).onPrimaryContainer;
     AuthProvider authProvider = context.read<AuthProvider>();
+    waitBuilding(authProvider.initiate);
     return BaseView(
       body: col(
         [
           LogoWidget().centered().paddingSymmetric(vertical: 48),
           Form(
-            key: authProvider.formKey,
+            key: authProvider.loginformKey,
             child: col([
                 cTitleSmall(
                   context,

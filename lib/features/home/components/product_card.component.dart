@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/src/extensions/export.dart';
+import 'package:smart_shop_client_app/constants/image.data.dart';
 import 'package:smart_shop_client_app/core/helpers/colors.helper.dart';
 import 'package:smart_shop_client_app/core/helpers/image_builder.helper.dart';
 import 'package:smart_shop_client_app/core/helpers/list_widget.helper.dart';
@@ -20,7 +21,7 @@ class ProductCard extends StatelessWidget {
       child: [
         col([
           ImageBuilderHelper.coverUrl(
-            product.image!.url,
+            product.image!.url ?? ImageData.itemPlaceholder,
             width: 50,
             height: 50,
           ).paddingSymmetric(vertical: 8),

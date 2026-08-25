@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get_utils/src/extensions/export.dart';
+import 'package:get_it/get_it.dart';
 import 'package:smart_shop_client_app/config/colors.conf.dart';
 import 'package:smart_shop_client_app/config/themes.conf.dart';
 import 'package:smart_shop_client_app/constants/app_text.data.dart';
@@ -15,6 +16,9 @@ import 'package:smart_shop_client_app/features/home/components/custom_tag.compon
 import 'package:smart_shop_client_app/features/home/components/home_header.component.dart';
 import 'package:smart_shop_client_app/features/home/components/product_wrap_layout.component.dart';
 import 'package:smart_shop_client_app/features/home/components/progress_indicator.component.dart';
+import 'package:smart_shop_client_app/shared/helpers/member_status.helper.dart';
+import 'package:smart_shop_client_app/shared/models/user.model.dart';
+import 'package:smart_shop_client_app/shared/providers/user.provider.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class Home extends StatelessWidget {
@@ -22,8 +26,9 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    User user = GetIt.instance<UserProvider>().user!;
     return col([
-        HomeHeader().paddingOnly(bottom: 18),
+        HomeHeader(user: user).paddingOnly(bottom: 18),
         CInputField(
           controller: TextEditingController(),
           prefixIcon: Icon(Icons.search),
@@ -37,11 +42,11 @@ class Home extends StatelessWidget {
                     AppText.memberStatus.tr.toUpperCase(),
                     fontFamily: ThemeConf.secondaryFontFamily,
                   ),
-                  CTag(text: AppText.bronzeTier.tr, color: colorScheme(context).secondary),
+                  CTag(text: getStatus(user.memberStatus), color: colorScheme(context).secondary),
                 ], align: MainAxisAlignment.spaceBetween)
                 .paddingOnly(bottom: 8),
             row([
-                  cTitleLarge(context, "150").paddingOnly(right: 4),
+                  cTitleLarge(context, user.points.toString()).paddingOnly(right: 4),
                   cTitleSmall(
                     context,
                     AppText.xpoints.tr.toUpperCase(),

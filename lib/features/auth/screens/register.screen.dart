@@ -23,13 +23,26 @@ class RegisterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AuthProvider authProvider = context.read<AuthProvider>();
+    waitBuilding(authProvider.initiate);
     Color iconsColor = colorScheme(context).onPrimaryContainer;
     
     return BaseView(
       body: Form(
-        key: authProvider.formKey,
+        key: authProvider.registerformKey,
         child: col([
           LogoWidget().centered().paddingSymmetric(vertical: 48),
+          cTitleSmall(
+            context,
+            AppText.username.tr.toUpperCase(),
+            fontFamily: ThemeConf.secondaryFontFamily,
+          ).paddingOnly(bottom: 8),
+          CInputField(
+            validator: FormBuilderValidators.username(
+              errorText: AppText.unvalidusername.tr,
+            ),
+            controller: authProvider.usernameController,
+            prefixIcon: Icon(Icons.person, color: iconsColor),
+          ).paddingOnly(bottom: 20),
           cTitleSmall(
             context,
             AppText.email.tr.toUpperCase(),
@@ -72,7 +85,7 @@ class RegisterScreen extends StatelessWidget {
           sel<AuthProvider, bool>(
             (c) => c.isLoading,
             (isLoading) => CButton.textOnly(
-              authProvider.register,
+              () => authProvider.register(),
               cTitleMedium(
                 context,
                 AppText.register.tr.toUpperCase(),
@@ -82,7 +95,7 @@ class RegisterScreen extends StatelessWidget {
               loading: isLoading,
             ),
           ),
-        ], calign: CrossAxisAlignment.start).paddingSymmetric(horizontal: 24),
+        ], calign: CrossAxisAlignment.start).paddingSymmetric(horizontal: 24).scrollVertical(),
       ),
     );
   }

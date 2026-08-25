@@ -10,15 +10,18 @@ import 'package:smart_shop_client_app/constants/app_text.data.dart';
 import 'package:smart_shop_client_app/core/helpers/colors.helper.dart';
 import 'package:smart_shop_client_app/core/helpers/list_widget.helper.dart';
 import 'package:smart_shop_client_app/core/helpers/text_style.helper.dart';
-import 'package:smart_shop_client_app/features/auth/providers/auth.provider.dart';
 import 'package:smart_shop_client_app/features/cart/screens/cart.screen.dart';
 import 'package:smart_shop_client_app/features/home/components/user_avatar.component.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:smart_shop_client_app/features/notifications/screens/notifications.dart';
+import 'package:smart_shop_client_app/shared/models/user.model.dart';
+import 'package:smart_shop_client_app/shared/providers/user.provider.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class HomeHeader extends StatelessWidget {
-  const HomeHeader({super.key});
+  const HomeHeader({super.key, required this.user});
+
+  final User user;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +35,7 @@ class HomeHeader extends StatelessWidget {
         ),
         cTitleMedium(
           context,
-          AppText.hello.trArgs([GetIt.instance<AuthProvider>().user!.username]),
+          AppText.hello.trArgs([GetIt.instance<UserProvider>().user!.username]),
           color: colorScheme(context).onSurface,
         ),
       ], calign: CrossAxisAlignment.start),
