@@ -110,7 +110,7 @@ class AuthProvider extends ChangeNotifier {
   }
 
   Future<bool> isLogedIn() async {
-    if (await LocalStorageService().secureCheckKey(LS.jwt)) {
+    if (await LocalStorageService().checkKey(LS.jwt)) {
       try {
         GetIt.instance<UserProvider>().user = await AuthRepository().getUserData();
 

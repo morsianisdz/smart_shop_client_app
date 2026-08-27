@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:smart_shop_client_app/core/helpers/colors.helper.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class DragHandle extends StatelessWidget {
   const DragHandle({super.key});
@@ -9,9 +11,9 @@ class DragHandle extends StatelessWidget {
       width: 40,
       height: 4,
       decoration: BoxDecoration(
-        color: Colors.white24,
+        color: colorScheme(context).onPrimaryContainer,
         borderRadius: BorderRadius.circular(2),
       ),
-    );
+    ).centered();
   }
 }

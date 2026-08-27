@@ -10,6 +10,7 @@ import 'package:provider/provider.dart';
 import 'package:smart_shop_client_app/core/providers/Theme.provider.dart';
 import 'package:sizer/sizer.dart';
 import 'package:smart_shop_client_app/features/auth/providers/auth.provider.dart';
+import 'package:smart_shop_client_app/features/home/providers/home.provider.dart';
 import 'package:smart_shop_client_app/features/main/providers/main.provider.dart';
 import 'package:smart_shop_client_app/features/main/screens/main.screen.dart';
 import 'package:smart_shop_client_app/features/notifications/providers/notification.provider.dart';
@@ -42,7 +43,8 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(create: (_) => AuthProvider()),
           ChangeNotifierProvider(create: (_) => NotificationProvider()),
           ChangeNotifierProvider(create: (_) => CartProvider()),
-          ChangeNotifierProvider(create: (_) => OfferProvider())
+          ChangeNotifierProvider(create: (_) => OfferProvider()),
+          ChangeNotifierProvider(create: (_) => HomeProvider())
         ],
         child: GetMaterialApp(
           title: AppText.appTitle,

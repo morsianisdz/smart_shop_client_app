@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_shop_client_app/core/widgets/snackbar.component.dart';
+import 'package:smart_shop_client_app/features/home/components/set_shopping_limit_modal_sheet.component.dart';
 import 'package:smart_shop_client_app/features/offers/models/coupon_off.model.dart';
 import 'package:smart_shop_client_app/features/offers/repositories/offer.repository.dart';
 
@@ -21,5 +22,21 @@ class HomeProvider extends ChangeNotifier {
     } catch (e) {
       CSnackBar.failed(e.toString());
     }
+  }
+
+  void onSetLimitPressed(BuildContext context) async {
+    await _showSetLimitModalSheet(context);
+  }
+
+  Future<void> _showSetLimitModalSheet(BuildContext context) async {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor:
+          Colors.transparent, // Required for custom rounded corners
+      builder: (context) {
+        return SetShoppingLimitModalSheet();
+      },
+    );
   }
 }

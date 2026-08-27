@@ -221,12 +221,19 @@ class AppText {
   static const String xclipped = "xclipped";
   static const String clipped = "clipped";
   static const String clippOffer = "clipp_offer";
-  static const String unvalidusername = "unvalidusername";  static const String registrationSuccess = "registration_success";  static const String silverTier = "silver_tier";  static const String goldTier = "gold_tier";  static const String simpleTier = "simple_tier";  static const String diamondTier = "diamond_tier";  static const String unlimited = "unlimited";  static const String setALimit = "set_a_limit";
-
-
-
-
-
-
-
+  static const String unvalidusername = "unvalidusername";
+  static const String registrationSuccess = "registration_success";
+  static const String silverTier = "silver_tier";
+  static const String goldTier = "gold_tier";
+  static const String simpleTier = "simple_tier";
+  static const String diamondTier = "diamond_tier";
+  static const String unlimited = "unlimited";
+  static const String setALimit = "set_a_limit";
+  static const String noShoppingLimitSet = "no_shopping_limit_set";
+  static const String tapBelowToStayInControlOfYourBudget =
+      "tap_below_to_stay_in_control_of_your_budget";
+  static const String setShoppingLimit = "set_shopping_limit";
+  static const String enterYourMaximumBudgetForThisShoppingTrip =
+      "enter_your_maximum_budget_for_this_shopping_trip";
+  static const String egx = "egx";
 }

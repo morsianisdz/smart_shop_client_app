@@ -142,7 +142,12 @@ class LocaleTranslation extends Translations {
       "simple_tier": "Simple Tier",
       "diamond_tier": "Diamond Tier",
       "unlimited": "Unlimited",
-      "set_a_limit": "Set A Limit"
+      "set_a_limit": "Set A Limit",
+      "no_shopping_limit_set": "No Shopping Limit Set",
+      "tap_below_to_stay_in_control_of_your_budget": "Tap below to stay in control of your budget",
+      "set_shopping_limit": "Set Shopping Limit",
+      "enter_your_maximum_budget_for_this_shopping_trip": "Enter your maximum budget for this shopping trip",
+      "egx": "e.g.%s"
     },
     "ar": {
       "introduction": "مقدمة",
