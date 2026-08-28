@@ -4,4 +4,5 @@ class ApisData {
   static const String getUserData = "getUserData";
   static const String getCouponOffers = "getCoupponOffers";
   static const String serverCheckAuth = "serverCheckAuth";
+  static const String setActiveShoppingLimit = "setActiveShoppingLimit";
 }

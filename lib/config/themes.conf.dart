@@ -4,6 +4,38 @@ import 'package:smart_shop_client_app/config/ui.conf.dart';
 
 class ThemeConf {
 
+  static ThemeData currentTheme = dark;
+
+  static ThemeData get dark => ThemeData(
+    fontFamily: fontFamily,
+    colorScheme: darkColorS,
+    iconTheme: iconThemeData,
+    textTheme: _buldTextTheme(darkColorS),
+    inputDecorationTheme: _buildInputDecorationTheme(darkColorS),
+    appBarTheme: appBarTheme,
+    elevatedButtonTheme: elevatedButtonThemeData,
+    bottomSheetTheme: bottomSheetThemeData,
+    primaryIconTheme: primaryIconTheme,
+    badgeTheme: badgeThemeData,
+    cardTheme: _buildCardTheme(darkColorS),
+    iconButtonTheme: iconButtonThemeBuilder(darkColorS),
+  );
+
+  static ThemeData get light => ThemeData(
+    fontFamily: fontFamily,
+    colorScheme: lightColorS,
+    iconTheme: iconThemeData,
+    textTheme: _buldTextTheme(lightColorS),
+    inputDecorationTheme: _buildInputDecorationTheme(lightColorS),
+    appBarTheme: appBarTheme,
+    elevatedButtonTheme: elevatedButtonThemeData,
+    bottomSheetTheme: bottomSheetThemeData,
+    primaryIconTheme: primaryIconTheme,
+    badgeTheme: badgeThemeData,
+    cardTheme: _buildCardTheme(lightColorS),
+    iconButtonTheme: iconButtonThemeBuilder(lightColorS),
+  );
+
   static const String fontFamily = 'PlusJakartaSans';
   static const String secondaryFontFamily = 'JetBrainsMono';
 
@@ -69,14 +101,19 @@ class ThemeConf {
     ),
   );
 
-  static InputDecorationTheme _buildInputDecorationTheme(ColorScheme colorScheme) => InputDecorationTheme(
+  static InputDecorationTheme _buildInputDecorationTheme(
+    ColorScheme colorScheme,
+  ) => InputDecorationTheme(
     filled: true,
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(UiConf.inputCornerRadius),
       borderSide: BorderSide.none,
     ),
     errorStyle: TextStyle(fontSize: UiConf.errorTextFontSize),
-    hintStyle: TextStyle(color: colorScheme.onPrimaryContainer, fontSize: UiConf.hintFontSize),
+    hintStyle: TextStyle(
+      color: colorScheme.onPrimaryContainer,
+      fontSize: UiConf.hintFontSize,
+    ),
     fillColor: colorScheme.primaryContainer,
   );
 
@@ -119,39 +156,8 @@ class ThemeConf {
 
   static IconButtonThemeData iconButtonThemeBuilder(ColorScheme colorScheme) =>
       IconButtonThemeData(
-        style: IconButton.styleFrom(backgroundColor: colorScheme.onSurface.withValues(alpha: 0.1)),
+        style: IconButton.styleFrom(
+          backgroundColor: colorScheme.onSurface.withValues(alpha: 0.1),
+        ),
       );
-    
-
-  static ThemeData get light => ThemeData(
-    fontFamily: fontFamily,
-    colorScheme: lightColorS,
-    iconTheme: iconThemeData,
-    textTheme: _buldTextTheme(lightColorS),
-    inputDecorationTheme: _buildInputDecorationTheme(lightColorS),
-    appBarTheme: appBarTheme,
-    elevatedButtonTheme: elevatedButtonThemeData,
-    bottomSheetTheme: bottomSheetThemeData,
-    primaryIconTheme: primaryIconTheme,
-    badgeTheme: badgeThemeData,
-    cardTheme: _buildCardTheme(lightColorS),
-    iconButtonTheme: iconButtonThemeBuilder(lightColorS)
-  );
-
-  static ThemeData get dark => ThemeData(
-    fontFamily: fontFamily,
-    colorScheme: darkColorS,
-    iconTheme: iconThemeData,
-    textTheme: _buldTextTheme(darkColorS),
-    inputDecorationTheme: _buildInputDecorationTheme(darkColorS),
-    appBarTheme: appBarTheme,
-    elevatedButtonTheme: elevatedButtonThemeData,
-    bottomSheetTheme: bottomSheetThemeData,
-    primaryIconTheme: primaryIconTheme,
-    badgeTheme: badgeThemeData,
-    cardTheme: _buildCardTheme(darkColorS),
-    iconButtonTheme: iconButtonThemeBuilder(darkColorS)
-  );
-
-  static ThemeData currentTheme = light;
 }

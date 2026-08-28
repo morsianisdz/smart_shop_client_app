@@ -6,10 +6,15 @@ import 'package:smart_shop_client_app/core/helpers/colors.helper.dart';
 import 'package:smart_shop_client_app/core/helpers/list_widget.helper.dart';
 import 'package:smart_shop_client_app/core/helpers/text_style.helper.dart';
 import 'package:smart_shop_client_app/core/widgets/input_field.components.dart';
+import 'package:smart_shop_client_app/features/home/providers/home.provider.dart';
 import 'package:smart_shop_client_app/features/scan/components/drag_handle.component.dart';
+import 'package:smart_shop_client_app/core/widgets/button.component.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class SetShoppingLimitModalSheet extends StatelessWidget {
-  const SetShoppingLimitModalSheet({super.key});
+  const SetShoppingLimitModalSheet({super.key, required this.homeProvider});
+
+  final HomeProvider homeProvider;
 
   @override
   Widget build(BuildContext context) {
@@ -37,52 +42,35 @@ class SetShoppingLimitModalSheet extends StatelessWidget {
             AppText.enterYourMaximumBudgetForThisShoppingTrip.tr,
           ).paddingOnly(bottom: 20),
           CInputField(
-            controller: TextEditingController(),
+            controller: homeProvider.limitFieldController,
             prefixIcon: FaIcon(FontAwesomeIcons.dollarSign, size: 14),
             text: AppText.egx.trArgs(["75"]),
             keyboardType: const TextInputType.numberWithOptions(decimal: true),
+            fillColor: colorScheme(context).onPrimary,
           ).paddingOnly(bottom: 24),
 
           row([
-            Expanded(
-              child: OutlinedButton(
-                onPressed: () => Get.back(),
-                style: OutlinedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(vertical: 14),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                ),
-                child: const Text('Cancel'),
+            CButton.textOnly(
+              Get.back,
+              cTitleSmall(
+                context,
+                AppText.cancel.tr.toUpperCase(),
+                color: colorScheme(context).onSurface,
+                fontWeight: FontWeight.bold,
               ),
-            ),
-            const SizedBox(width: 12),
-            Expanded(
-              child: ElevatedButton(
-                onPressed: () {
-                  /* final double? parsedLimit = double.tryParse(limitController.text);
-                    if (parsedLimit != null && parsedLimit > 0) {
-                      homeProvider.updateShoppingLimit(parsedLimit);
-                      Get.back();
-                    } else {
-                      Get.snackbar('Error', 'Please enter a valid amount', snackPosition: SnackPosition.BOTTOM);
-                    } */
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFFFF6600),
-                  foregroundColor: Colors.white,
-                  elevation: 0,
-                  padding: const EdgeInsets.symmetric(vertical: 14),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                ),
-                child: const Text(
-                  'Save',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
+              backgroundColor: colorScheme(
+                context,
+              ).onSurface.withValues(alpha: 0.1),
+            ).paddingOnly(right: 16).expand(),
+            CButton.textOnly(
+              homeProvider.setLimit,
+              cTitleSmall(
+                context,
+                AppText.setALimit.tr.toUpperCase(),
+                color: colorScheme(context).onSurface,
+                fontWeight: FontWeight.bold,
               ),
-            ),
+            ).expand(),
           ]),
         ],
         size: MainAxisSize.min,

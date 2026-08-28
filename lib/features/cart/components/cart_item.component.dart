@@ -71,11 +71,13 @@ class CartItem extends StatelessWidget {
               _buildQuantityButton(
                 icon: FontAwesomeIcons.minus,
                 onPressed: () {},
+                context: context
               ),
               cTitleMedium(context, product.qty.toString()).paddingSymmetric(horizontal: 12),
               _buildQuantityButton(
                 icon: FontAwesomeIcons.plus,
                 onPressed: () {},
+                context: context
               ),
             ]),
           ],
@@ -88,6 +90,7 @@ class CartItem extends StatelessWidget {
   Widget _buildQuantityButton({
     required FaIconData icon,
     required VoidCallback onPressed,
+    required BuildContext context
   }) {
     return SizedBox(
       width: 32,
@@ -96,7 +99,7 @@ class CartItem extends StatelessWidget {
         padding: EdgeInsets.zero,
         onPressed: onPressed,
         style: ButtonStyle(
-          backgroundColor: WidgetStateProperty.all(const Color(0xFF222B3E)),
+          backgroundColor: WidgetStateProperty.all(colorScheme(context).onPrimaryContainer),
           shape: WidgetStateProperty.all(
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           ),

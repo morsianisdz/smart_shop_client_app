@@ -11,7 +11,8 @@ class CInputField extends StatelessWidget {
     this.obscure = false,
     this.prefixIcon,
     this.onChanged,
-    this.keyboardType
+    this.keyboardType,
+    this.fillColor
   });
 
   final String? text;
@@ -22,6 +23,7 @@ class CInputField extends StatelessWidget {
   final Widget? prefixIcon;
   final void Function(String)? onChanged;
   final TextInputType? keyboardType;
+  final Color? fillColor;
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +35,7 @@ class CInputField extends StatelessWidget {
       autovalidateMode: AutovalidateMode.onUserInteraction,
       keyboardType: keyboardType,
       decoration: InputDecoration(
+        fillColor: fillColor,
         prefixIcon: prefixIcon!.paddingSymmetric(horizontal: 12),
         hintText: text,
         floatingLabelAlignment: FloatingLabelAlignment.center

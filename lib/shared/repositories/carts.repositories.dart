@@ -1,4 +1,6 @@
 import 'package:get_it/get_it.dart';
+import 'package:smart_shop_client_app/constants/apis.data.dart';
+import 'package:smart_shop_client_app/core/services/http.service.dart';
 import 'package:smart_shop_client_app/core/services/sqlite.service.dart';
 import 'package:smart_shop_client_app/shared/models/cart.model.dart';
 import 'package:smart_shop_client_app/shared/models/product.model.dart';
@@ -57,6 +59,14 @@ class CartsRepositories {
         return true;
       }
       return false;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<void> setActiveShoppingLimit(double limit) async {
+    try {
+      await HttpService().post(ApisData.setActiveShoppingLimit, {"limit": limit});
     } catch (e) {
       rethrow;
     }

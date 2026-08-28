@@ -49,7 +49,7 @@ class ActiveShoppingLimitEmpty extends StatelessWidget {
         row([
           CButton.withIcon(
             () {
-              homeProvider.onSetLimitPressed(context);
+              homeProvider.onSetLimitPressed(context, homeProvider);
             },
             cTitleSmall(
               context,

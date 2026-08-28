@@ -27,7 +27,7 @@ class User {
   final String? phoneNumber;
   final int points;
   final int memberStatus;
-  final double activeShoppingLimit;
+  double activeShoppingLimit;
 
   factory User.fromJson(dynamic json) {
     return User(
